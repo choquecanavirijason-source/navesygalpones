@@ -1,0 +1,5 @@
+/*
+ * Estilos de organismos que NO pueden expresarse con utilidades de Tailwind.
+ * Un archivo por organismo: `@import "./<organism-name>.css";`
+ */
+@import "./hero.css";

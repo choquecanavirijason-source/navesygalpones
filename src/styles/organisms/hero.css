@@ -1,0 +1,10 @@
+@layer components {
+  /* Fondo decorativo del HeroSection: retícula sutil que se desvanece hacia los bordes */
+  .hero-backdrop {
+    background-image:
+      linear-gradient(to right, var(--border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%);
+  }
+}

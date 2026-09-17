@@ -1,0 +1,30 @@
+# Normaliza finales de línea a LF en el repositorio (el proyecto se edita en Windows)
+* text=auto eol=lf
+
+# Scripts de Windows
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binarios
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.mp4 binary
+*.webm binary
+*.mov binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.pdf binary
+*.glb binary
+*.gltf binary
+*.hdr binary
+
+# Lockfile: sin diff legible ni merges textuales
+package-lock.json -diff linguist-generated=true

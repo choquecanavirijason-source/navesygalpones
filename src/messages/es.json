@@ -1,0 +1,88 @@
+{
+  "Metadata": {
+    "siteName": "Nombre del sitio",
+    "home": {
+      "title": "Inicio",
+      "description": "Descripción de la página de inicio."
+    },
+    "forex": {
+      "title": "Forex",
+      "description": "Descripción de la página de forex."
+    },
+    "privacy": {
+      "title": "Privacidad",
+      "description": "Descripción de la página de privacidad."
+    },
+    "terms": {
+      "title": "Términos",
+      "description": "Descripción de la página de términos."
+    }
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "forex": "Forex",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "mainNavLabel": "Navegación principal",
+    "legalNavLabel": "Enlaces legales",
+    "skipToContent": "Saltar al contenido",
+    "language": "Idioma",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "Footer": {
+    "copyright": "© {year} {siteName}"
+  },
+  "Home": {
+    "hero": {
+      "badge": "Badge",
+      "title": "Título",
+      "description": "Descripción.",
+      "primaryAction": "Acción principal"
+    }
+  },
+  "Forex": {
+    "hero": {
+      "badge": "Badge",
+      "title": "Título",
+      "description": "Descripción.",
+      "primaryAction": "Acción principal"
+    }
+  },
+  "Privacy": {
+    "title": "Privacidad",
+    "description": "Descripción.",
+    "placeholder": "Contenido pendiente."
+  },
+  "Terms": {
+    "title": "Términos",
+    "description": "Descripción.",
+    "placeholder": "Contenido pendiente."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Página no encontrada",
+    "description": "La página solicitada no existe.",
+    "backHome": "Volver al inicio"
+  },
+  "Common": {
+    "loading": "Cargando…",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "notifications": "Notificaciones"
+  },
+  "Errors": {
+    "UNKNOWN": "Ocurrió un error inesperado.",
+    "BAD_REQUEST": "La solicitud no es válida.",
+    "VALIDATION_ERROR": "Revisa los datos ingresados.",
+    "UNAUTHORIZED": "Necesitas iniciar sesión.",
+    "FORBIDDEN": "No tienes permiso para esta acción.",
+    "NOT_FOUND": "El recurso no existe.",
+    "CONFLICT": "El recurso ya existe o está en conflicto.",
+    "RATE_LIMITED": "Demasiadas solicitudes. Intenta más tarde.",
+    "NETWORK_ERROR": "No hay conexión con el servidor.",
+    "TIMEOUT": "El servidor tardó demasiado en responder.",
+    "SERVICE_UNAVAILABLE": "El servicio no está disponible.",
+    "UPSTREAM_ERROR": "El servicio externo respondió con un error."
+  }
+}

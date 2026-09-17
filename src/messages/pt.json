@@ -1,0 +1,88 @@
+{
+  "Metadata": {
+    "siteName": "Nome do site",
+    "home": {
+      "title": "Início",
+      "description": "Descrição da página inicial."
+    },
+    "forex": {
+      "title": "Forex",
+      "description": "Descrição da página de forex."
+    },
+    "privacy": {
+      "title": "Privacidade",
+      "description": "Descrição da página de privacidade."
+    },
+    "terms": {
+      "title": "Termos",
+      "description": "Descrição da página de termos."
+    }
+  },
+  "Navigation": {
+    "home": "Início",
+    "forex": "Forex",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "mainNavLabel": "Navegação principal",
+    "legalNavLabel": "Links legais",
+    "skipToContent": "Pular para o conteúdo",
+    "language": "Idioma",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
+  },
+  "Footer": {
+    "copyright": "© {year} {siteName}"
+  },
+  "Home": {
+    "hero": {
+      "badge": "Badge",
+      "title": "Título",
+      "description": "Descrição.",
+      "primaryAction": "Ação principal"
+    }
+  },
+  "Forex": {
+    "hero": {
+      "badge": "Badge",
+      "title": "Título",
+      "description": "Descrição.",
+      "primaryAction": "Ação principal"
+    }
+  },
+  "Privacy": {
+    "title": "Privacidade",
+    "description": "Descrição.",
+    "placeholder": "Conteúdo pendente."
+  },
+  "Terms": {
+    "title": "Termos",
+    "description": "Descrição.",
+    "placeholder": "Conteúdo pendente."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Página não encontrada",
+    "description": "A página solicitada não existe.",
+    "backHome": "Voltar ao início"
+  },
+  "Common": {
+    "loading": "Carregando…",
+    "retry": "Tentar novamente",
+    "close": "Fechar",
+    "notifications": "Notificações"
+  },
+  "Errors": {
+    "UNKNOWN": "Ocorreu um erro inesperado.",
+    "BAD_REQUEST": "A solicitação não é válida.",
+    "VALIDATION_ERROR": "Verifique os dados informados.",
+    "UNAUTHORIZED": "Você precisa entrar.",
+    "FORBIDDEN": "Você não tem permissão para esta ação.",
+    "NOT_FOUND": "O recurso não existe.",
+    "CONFLICT": "O recurso já existe ou está em conflito.",
+    "RATE_LIMITED": "Muitas solicitações. Tente novamente mais tarde.",
+    "NETWORK_ERROR": "Não foi possível conectar ao servidor.",
+    "TIMEOUT": "O servidor demorou demais para responder.",
+    "SERVICE_UNAVAILABLE": "O serviço está indisponível.",
+    "UPSTREAM_ERROR": "O serviço externo retornou um erro."
+  }
+}

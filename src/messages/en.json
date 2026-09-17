@@ -1,0 +1,88 @@
+{
+  "Metadata": {
+    "siteName": "Site name",
+    "home": {
+      "title": "Home",
+      "description": "Home page description."
+    },
+    "forex": {
+      "title": "Forex",
+      "description": "Forex page description."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "description": "Privacy page description."
+    },
+    "terms": {
+      "title": "Terms",
+      "description": "Terms page description."
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "forex": "Forex",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "mainNavLabel": "Main navigation",
+    "legalNavLabel": "Legal links",
+    "skipToContent": "Skip to content",
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Footer": {
+    "copyright": "© {year} {siteName}"
+  },
+  "Home": {
+    "hero": {
+      "badge": "Badge",
+      "title": "Title",
+      "description": "Description.",
+      "primaryAction": "Primary action"
+    }
+  },
+  "Forex": {
+    "hero": {
+      "badge": "Badge",
+      "title": "Title",
+      "description": "Description.",
+      "primaryAction": "Primary action"
+    }
+  },
+  "Privacy": {
+    "title": "Privacy",
+    "description": "Description.",
+    "placeholder": "Content pending."
+  },
+  "Terms": {
+    "title": "Terms",
+    "description": "Description.",
+    "placeholder": "Content pending."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Page not found",
+    "description": "The requested page does not exist.",
+    "backHome": "Back to home"
+  },
+  "Common": {
+    "loading": "Loading…",
+    "retry": "Retry",
+    "close": "Close",
+    "notifications": "Notifications"
+  },
+  "Errors": {
+    "UNKNOWN": "An unexpected error occurred.",
+    "BAD_REQUEST": "The request is not valid.",
+    "VALIDATION_ERROR": "Please check the data you entered.",
+    "UNAUTHORIZED": "You need to sign in.",
+    "FORBIDDEN": "You are not allowed to perform this action.",
+    "NOT_FOUND": "The resource does not exist.",
+    "CONFLICT": "The resource already exists or is in conflict.",
+    "RATE_LIMITED": "Too many requests. Please try again later.",
+    "NETWORK_ERROR": "Unable to reach the server.",
+    "TIMEOUT": "The server took too long to respond.",
+    "SERVICE_UNAVAILABLE": "The service is unavailable.",
+    "UPSTREAM_ERROR": "The external service returned an error."
+  }
+}

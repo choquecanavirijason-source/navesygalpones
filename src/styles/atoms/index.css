@@ -1,0 +1,5 @@
+/*
+ * Estilos de átomos que NO pueden expresarse con utilidades de Tailwind
+ * (keyframes, pseudo-elementos complejos, selectores de terceros).
+ * Un archivo por átomo: `@import "./<atom-name>.css";`
+ */

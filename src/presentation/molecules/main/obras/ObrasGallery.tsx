@@ -58,7 +58,7 @@ export function ObrasGallery({ projects, labelledBy, previousLabel, nextLabel, s
     listRef.current?.children[index]?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="relative flex w-full flex-col">
       <div className="flex items-center gap-2">
         <button
           type="button"
@@ -76,10 +76,10 @@ export function ObrasGallery({ projects, labelledBy, previousLabel, nextLabel, s
           aria-labelledby={labelledBy}
           tabIndex={0}
           onScroll={syncArrows}
-          className="flex min-w-0 flex-1 items-start snap-x snap-mandatory gap-3 overflow-x-auto [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none lg:overflow-hidden [&::-webkit-scrollbar]:hidden"
+          className="flex min-w-0 flex-1 items-stretch snap-x snap-mandatory gap-3 overflow-x-auto [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none lg:overflow-hidden [&::-webkit-scrollbar]:hidden"
         >
           {projects.map((project, i) => (
-            <li key={i} className="self-start w-[60%] shrink-0 snap-start sm:w-[30%] lg:w-auto lg:min-w-0 lg:flex-1">
+            <li key={i} className="flex w-[60%] shrink-0 snap-start sm:w-[30%] lg:w-auto lg:min-w-0 lg:flex-1">
               <ProjectCard {...project} />
             </li>
           ))}
@@ -96,19 +96,18 @@ export function ObrasGallery({ projects, labelledBy, previousLabel, nextLabel, s
         </button>
       </div>
 
-      <div className="mt-1.5 flex justify-center gap-1">
+      <div className="relative z-0 mt-6 flex h-auto min-h-0 w-full items-center justify-center gap-2 py-2">
         {slideLabels?.map((label, i) => (
           <button
             key={label}
             type="button"
             onClick={() => goTo(i)}
             aria-current={i === active ? "true" : undefined}
-            className="p-1"
+            className={cn(
+              "size-2.5 shrink-0 rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-[#F04400] focus-visible:ring-offset-2 focus-visible:outline-none",
+              i === active ? "bg-[#F04400]" : "bg-gray-300 hover:bg-gray-400",
+            )}
           >
-            <span
-              aria-hidden
-              className={cn("block size-2 rounded-full transition-colors", i === active ? "bg-[#F04400]" : "bg-gray-300")}
-            />
             <span className="sr-only">{label}</span>
           </button>
         ))}

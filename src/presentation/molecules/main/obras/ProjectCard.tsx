@@ -8,23 +8,25 @@ export interface ProjectCardProps {
   size: string;
 }
 
-/** Tarjeta apaisada de una obra: foto 16:10 y texto mínimo debajo, sin alturas artificiales. */
+/** Tarjeta de una obra: alto uniforme; la foto arriba y la ubicación/superficie siempre al pie. */
 export function ProjectCard({ image, name, location, size }: ProjectCardProps) {
   return (
-    <article className="inline-block h-auto w-full overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm">
-      <div className="relative aspect-[16/9] w-full bg-graphite">
+    <article className="flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl bg-white shadow-md">
+      <div className="relative aspect-video w-full flex-shrink-0 bg-graphite">
         <Image
           src={image}
           alt=""
           fill
           sizes="(min-width: 1024px) 16vw, (min-width: 640px) 30vw, 60vw"
-          className="rounded-t-xl object-cover object-center"
+          className="object-cover object-center"
         />
       </div>
-      <div className="rounded-b-xl bg-white p-2">
-        <h3 className="text-xs leading-tight font-bold break-words text-[#282828]">{name}</h3>
-        <p className="mt-0.5 text-[10px] leading-tight text-[#6D6D6D]">{location}</p>
-        <p className="text-[10px] leading-tight text-[#6D6D6D]">{size}</p>
+      <div className="flex flex-1 flex-col justify-between p-2.5">
+        <h3 className="line-clamp-2 min-h-[2rem] text-xs leading-snug font-bold text-[#282828]">{name}</h3>
+        <div className="mt-auto pt-1.5 text-[10px] leading-tight text-[#6D6D6D]">
+          <p>{location}</p>
+          <p className="mt-0.5">{size}</p>
+        </div>
       </div>
     </article>
   );

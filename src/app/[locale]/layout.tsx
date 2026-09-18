@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -10,6 +11,13 @@ import { resolveLocale, routing } from "@/i18n/routing";
 import { AppLayout } from "@/presentation/templates/app/AppLayout";
 
 import "@/styles/globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
 
 interface LocaleLayoutProps {
   children: ReactNode;
@@ -51,7 +59,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className={montserrat.variable} suppressHydrationWarning>
       <body>
         <NextIntlClientProvider>
           <AppLayout>{children}</AppLayout>

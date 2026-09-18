@@ -30,15 +30,55 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
+  "Header": {
+    "topbar": {
+      "coverageLabel": "Coverage across Argentina",
+      "phoneLabel": "Call us",
+      "phoneNumber": "11 4493-6915",
+      "ctaButton": "GET YOUR QUOTE"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Services",
+      "projects": "Projects",
+      "sustainability": "Sustainability",
+      "faq": "FAQ",
+      "contact": "Contact"
+    }
+  },
   "Footer": {
     "copyright": "© {year} {siteName}"
   },
   "Home": {
     "hero": {
-      "badge": "Badge",
-      "title": "Title",
-      "description": "Description.",
-      "primaryAction": "Primary action"
+      "badge": "INDUSTRIAL WAREHOUSES",
+      "title": {
+        "line1": "WE BUILD THE INFRASTRUCTURE",
+        "line2": "YOUR BUSINESS NEEDS",
+        "line3": "TO GROW"
+      },
+      "description": "Comprehensive solutions in steel structures, civil works, industrial flooring, and turnkey projects.",
+      "ctaPrimary": "GET A QUOTE ON WHATSAPP",
+      "ctaSecondary": "SEE OUR PROJECTS",
+      "tagline": "Today's ideas, tomorrow's infrastructure."
+    },
+    "heroCarousel": {
+      "previous": "Previous slide",
+      "next": "Next slide",
+      "goToSlide": "Go to slide {index}"
+    },
+    "heroTrustBar": {
+      "experience": { "icon": "history", "title": "25 YEARS", "subtitle": "of experience" },
+      "solutions": { "icon": "key-round", "title": "SOLUTIONS", "subtitle": "turnkey" },
+      "quality": { "icon": "shield-check", "title": "QUALITY", "subtitle": "guaranteed" },
+      "team": {
+        "icon": "hard-hat",
+        "title": "PROFESSIONAL TEAM",
+        "subtitle": "and skilled labor"
+      },
+      "sustainability": { "icon": "leaf", "title": "CONSTRUCTION", "subtitle": "sustainable" },
+      "coverage": { "icon": "map-pin", "title": "COVERAGE", "subtitle": "nationwide" }
     }
   },
   "Forex": {

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const headingVariants = cva("font-semibold tracking-tight text-balance text-foreground", {
+const headingVariants = cva("font-bold tracking-tight text-balance text-foreground", {
   variants: {
     size: {
       display: "text-4xl sm:text-5xl lg:text-6xl",

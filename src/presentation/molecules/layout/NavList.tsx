@@ -1,3 +1,5 @@
+import { ChevronDown } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 import { NavLink } from "@/presentation/atoms/layout/NavLink";
 import type { NavLinkItem } from "@/presentation/helpers/types";
@@ -20,7 +22,13 @@ export function NavList({ items, ariaLabel, orientation = "horizontal", classNam
       >
         {items.map((item) => (
           <li key={item.href}>
-            <NavLink href={item.href}>{item.label}</NavLink>
+            <NavLink
+              href={item.href}
+              active={item.active}
+              trailingIcon={item.hasDropdown ? <ChevronDown aria-hidden className="size-4" /> : undefined}
+            >
+              {item.label}
+            </NavLink>
           </li>
         ))}
       </ul>

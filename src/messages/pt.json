@@ -30,15 +30,55 @@
     "openMenu": "Abrir menu",
     "closeMenu": "Fechar menu"
   },
+  "Header": {
+    "topbar": {
+      "coverageLabel": "Cobertura em toda a Argentina",
+      "phoneLabel": "Ligue",
+      "phoneNumber": "11 4493-6915",
+      "ctaButton": "SOLICITE SEU ORÇAMENTO"
+    },
+    "nav": {
+      "home": "Início",
+      "about": "Sobre nós",
+      "services": "Serviços",
+      "projects": "Obras",
+      "sustainability": "Sustentabilidade",
+      "faq": "FAQ",
+      "contact": "Contato"
+    }
+  },
   "Footer": {
     "copyright": "© {year} {siteName}"
   },
   "Home": {
     "hero": {
-      "badge": "Badge",
-      "title": "Título",
-      "description": "Descrição.",
-      "primaryAction": "Ação principal"
+      "badge": "GALPÕES INDUSTRIAIS",
+      "title": {
+        "line1": "CONSTRUÍMOS A INFRAESTRUTURA",
+        "line2": "QUE SUA EMPRESA",
+        "line3": "PRECISA PARA CRESCER"
+      },
+      "description": "Soluções completas em estruturas metálicas, obra civil, pisos industriais e projetos chave na mão.",
+      "ctaPrimary": "ORÇAMENTO PELO WHATSAPP",
+      "ctaSecondary": "VEJA NOSSOS PROJETOS",
+      "tagline": "Ideias de hoje, infraestrutura de amanhã."
+    },
+    "heroCarousel": {
+      "previous": "Slide anterior",
+      "next": "Próximo slide",
+      "goToSlide": "Ir para o slide {index}"
+    },
+    "heroTrustBar": {
+      "experience": { "icon": "history", "title": "25 ANOS", "subtitle": "de experiência" },
+      "solutions": { "icon": "key-round", "title": "SOLUÇÕES", "subtitle": "chave na mão" },
+      "quality": { "icon": "shield-check", "title": "QUALIDADE", "subtitle": "garantida" },
+      "team": {
+        "icon": "hard-hat",
+        "title": "EQUIPE PROFISSIONAL",
+        "subtitle": "e mão de obra qualificada"
+      },
+      "sustainability": { "icon": "leaf", "title": "CONSTRUÇÃO", "subtitle": "sustentável" },
+      "coverage": { "icon": "map-pin", "title": "COBERTURA", "subtitle": "em todo o país" }
     }
   },
   "Forex": {

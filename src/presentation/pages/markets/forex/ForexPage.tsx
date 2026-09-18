@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
 import { ROUTES } from "@/constants/routes";
-import { HeroSection } from "@/presentation/organisms/main/hero/HeroSection";
+import { GenericHeroSection } from "@/presentation/organisms/main/hero/GenericHeroSection";
 import { MainLayout } from "@/presentation/templates/main/MainLayout";
 
 export function ForexPage() {
@@ -9,7 +9,7 @@ export function ForexPage() {
 
   return (
     <MainLayout>
-      <HeroSection
+      <GenericHeroSection
         id="forex-hero"
         badge={t("badge")}
         title={t("title")}
@@ -19,3 +19,4 @@ export function ForexPage() {
     </MainLayout>
   );
 }
+

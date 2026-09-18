@@ -30,15 +30,55 @@
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú"
   },
+  "Header": {
+    "topbar": {
+      "coverageLabel": "Cobertura en toda Argentina",
+      "phoneLabel": "Llamamos",
+      "phoneNumber": "11 4493-6915",
+      "ctaButton": "SOLICITÁ TU PRESUPUESTO"
+    },
+    "nav": {
+      "home": "Inicio",
+      "about": "Nosotros",
+      "services": "Servicios",
+      "projects": "Obras",
+      "sustainability": "Sustentabilidad",
+      "faq": "FAQ",
+      "contact": "Contacto"
+    }
+  },
   "Footer": {
     "copyright": "© {year} {siteName}"
   },
   "Home": {
     "hero": {
-      "badge": "Badge",
-      "title": "Título",
-      "description": "Descripción.",
-      "primaryAction": "Acción principal"
+      "badge": "GALPONES INDUSTRIALES",
+      "title": {
+        "line1": "CONSTRUIMOS LA INFRAESTRUCTURA",
+        "line2": "QUE TU EMPRESA",
+        "line3": "NECESITA PARA CRECER"
+      },
+      "description": "Soluciones integrales en estructuras metálicas, obra civil, pisos industriales y proyectos llave en mano.",
+      "ctaPrimary": "COTIZÁ POR WHATSAPP",
+      "ctaSecondary": "VER NUESTROS PROYECTOS",
+      "tagline": "Ideas de hoy, infraestructura del mañana."
+    },
+    "heroCarousel": {
+      "previous": "Diapositiva anterior",
+      "next": "Diapositiva siguiente",
+      "goToSlide": "Ir a la diapositiva {index}"
+    },
+    "heroTrustBar": {
+      "experience": { "icon": "history", "title": "25 AÑOS", "subtitle": "de experiencia" },
+      "solutions": { "icon": "key-round", "title": "SOLUCIONES", "subtitle": "llave en mano" },
+      "quality": { "icon": "shield-check", "title": "CALIDAD", "subtitle": "garantizada" },
+      "team": {
+        "icon": "hard-hat",
+        "title": "EQUIPO PROFESIONAL",
+        "subtitle": "y mano de obra calificada"
+      },
+      "sustainability": { "icon": "leaf", "title": "CONSTRUCCIÓN", "subtitle": "sustentable" },
+      "coverage": { "icon": "map-pin", "title": "COBERTURA", "subtitle": "en todo el país" }
     }
   },
   "Forex": {

@@ -11,12 +11,16 @@ interface NavLinkProps {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
+  /** Fuerza el estado activo (p. ej. anclas de una sola página); si se omite, se deriva de la ruta. */
+  active?: boolean;
+  /** Ícono al final del label (p. ej. chevron de submenú). Decorativo. */
+  trailingIcon?: ReactNode;
 }
 
 /** Enlace de navegación con estado activo (`aria-current="page"`). */
-export function NavLink({ href, children, className, onClick }: NavLinkProps) {
+export function NavLink({ href, children, className, onClick, active, trailingIcon }: NavLinkProps) {
   const pathname = usePathname();
-  const isActive = isActivePath(pathname, href);
+  const isActive = active ?? isActivePath(pathname, href);
 
   return (
     <Link
@@ -24,11 +28,12 @@ export function NavLink({ href, children, className, onClick }: NavLinkProps) {
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "rounded-sm text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none aria-[current=page]:text-foreground",
+        "inline-flex items-center gap-1 rounded-sm text-base font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none aria-[current=page]:text-foreground aria-[current=page]:underline aria-[current=page]:decoration-brand-orange aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4",
         className,
       )}
     >
       {children}
+      {trailingIcon}
     </Link>
   );
 }

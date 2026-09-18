@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -62,7 +62,9 @@ export function MobileNav({
                 <NavLink
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-2 text-base hover:bg-accent"
+                  active={item.active}
+                  trailingIcon={item.hasDropdown ? <ChevronDown aria-hidden className="size-3.5" /> : undefined}
+                  className="flex justify-between rounded-md px-3 py-2 text-base hover:bg-accent"
                 >
                   {item.label}
                 </NavLink>

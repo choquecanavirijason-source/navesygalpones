@@ -79,6 +79,90 @@
       },
       "sustainability": { "icon": "leaf", "title": "CONSTRUÇÃO", "subtitle": "sustentável" },
       "coverage": { "icon": "map-pin", "title": "COBERTURA", "subtitle": "em todo o país" }
+    },
+    "equipo": {
+      "title": "A TECNOLOGIA E O TALENTO HUMANO FAZEM A DIFERENÇA",
+      "description": "Contamos com uma equipe de engenheiros, arquitetos, projetistas, operários especializados, pessoal de obra, administração e vendas, trabalhando juntos para que cada projeto seja um sucesso.",
+      "ctaLabel": "NOSSA EQUIPE",
+      "stats": [
+        {
+          "value": "+120",
+          "label": "PROFISSIONAIS e operários"
+        },
+        {
+          "value": "+500",
+          "label": "OBRAS realizadas"
+        },
+        {
+          "value": "+1.500.000 m²",
+          "label": "CONSTRUÍDOS em todo o país"
+        },
+        {
+          "value": "100%",
+          "label": "COMPROMISSO com nossos clientes"
+        }
+      ]
+    },
+    "obras": {
+      "badge": "NOSSAS OBRAS",
+      "title": "PROJETOS REAIS, RESULTADOS CONCRETOS.",
+      "description": "Cada obra reflete nossa experiência e o compromisso com nossos clientes.",
+      "ctaLabel": "VER TODAS AS OBRAS",
+      "projects": [
+        {
+          "name": "Centro logístico",
+          "location": "Escobar, Bs. As.",
+          "size": "2.500 m²"
+        },
+        {
+          "name": "Planta industrial",
+          "location": "Pilar, Bs. As.",
+          "size": "1.800 m²"
+        },
+        {
+          "name": "Depósito comercial",
+          "location": "Tigre, Bs. As.",
+          "size": "1.200 m²"
+        },
+        {
+          "name": "Galpão agroindustrial",
+          "location": "San Pedro, Bs. As.",
+          "size": "3.000 m²"
+        }
+      ],
+      "testimonial": {
+        "quote": "Cumpriram os prazos, a qualidade foi excelente e a equipe esteve sempre presente. Totalmente recomendáveis.",
+        "authorName": "Martín López",
+        "authorRole": "Gerente Geral",
+        "authorCompany": "Agroindustrias del Norte",
+        "rating": "5"
+      }
+    },
+    "contacto": {
+      "title": "TEM UM PROJETO\nEM MENTE?",
+      "description": "Vamos conversar. Nossa equipe orienta você e prepara uma proposta sob medida.",
+      "benefits": {
+        "fast": "Resposta rápida",
+        "advice": "Assessoria sem custo",
+        "privacy": "Confidencialidade"
+      },
+      "form": {
+        "type": "Tipo de obra",
+        "typeOptions": [
+          "Estruturas metálicas",
+          "Obra civil",
+          "Pisos industriais",
+          "Projeto chave na mão"
+        ],
+        "area": "m² aproximados",
+        "name": "Nome e sobrenome",
+        "city": "Cidade",
+        "company": "Empresa (opcional)",
+        "phone": "Telefone / WhatsApp",
+        "message": "Conte-nos sobre seu projeto...",
+        "submit": "ENVIAR CONSULTA"
+      },
+      "tagline": "UM PAÍS EM CONSTANTE CRESCIMENTO. NÓS TAMBÉM."
     }
   },
   "Forex": {

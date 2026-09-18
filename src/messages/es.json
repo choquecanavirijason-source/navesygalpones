@@ -33,7 +33,7 @@
   "Header": {
     "topbar": {
       "coverageLabel": "Cobertura en toda Argentina",
-      "phoneLabel": "Llamamos",
+      "phoneLabel": "Llamanos",
       "phoneNumber": "11 4493-6915",
       "ctaButton": "SOLICITÁ TU PRESUPUESTO"
     },
@@ -43,7 +43,7 @@
       "services": "Servicios",
       "projects": "Obras",
       "sustainability": "Sustentabilidad",
-      "faq": "FAQ",
+      "faq": "Preguntas frecuentes",
       "contact": "Contacto"
     }
   },
@@ -69,21 +69,87 @@
       "goToSlide": "Ir a la diapositiva {index}"
     },
     "heroTrustBar": {
-      "experience": { "icon": "history", "title": "25 AÑOS", "subtitle": "de experiencia" },
-      "solutions": { "icon": "key-round", "title": "SOLUCIONES", "subtitle": "llave en mano" },
-      "quality": { "icon": "shield-check", "title": "CALIDAD", "subtitle": "garantizada" },
+      "experience": {
+        "icon": "history",
+        "title": "25 AÑOS",
+        "subtitle": "de experiencia"
+      },
+      "solutions": {
+        "icon": "key-round",
+        "title": "SOLUCIONES",
+        "subtitle": "llave en mano"
+      },
+      "quality": {
+        "icon": "shield-check",
+        "title": "CALIDAD",
+        "subtitle": "garantizada"
+      },
       "team": {
         "icon": "hard-hat",
         "title": "EQUIPO PROFESIONAL",
         "subtitle": "y mano de obra calificada"
       },
-      "sustainability": { "icon": "leaf", "title": "CONSTRUCCIÓN", "subtitle": "sustentable" },
-      "coverage": { "icon": "map-pin", "title": "COBERTURA", "subtitle": "en todo el país" }
+      "sustainability": {
+        "icon": "leaf",
+        "title": "CONSTRUCCIÓN",
+        "subtitle": "sustentable"
+      },
+      "coverage": {
+        "icon": "map-pin",
+        "title": "COBERTURA",
+        "subtitle": "en todo el país"
+      }
+    },
+    "servicesSection": {
+      "eyebrow": "Nuestros Servicios",
+      "title": {
+        "line1": "Todo lo que tu obra necesita,",
+        "line2": "en una sola empresa."
+      },
+      "description": "Integramos ingeniería, fabricación y construcción para ofrecerte soluciones eficientes, seguras y de alta calidad.",
+      "cta": "CONOCÉ TODOS LOS SERVICIOS",
+      "services": {
+        "s1": "Galpones Industriales",
+        "s2": "Tinglados Metálicos",
+        "s3": "Estructuras Metálicas",
+        "s4": "Pisos Industriales",
+        "s5": "Obra Civil y Mampostería",
+        "s6": "Proyectos Llave en Mano",
+        "s7": "Movimiento de Suelo"
+      }
+    },
+    "aboutSection": {
+      "eyebrow": "Sobre NyG Estructuras",
+      "title": "25 años construyendo en Argentina",
+      "description": "Somos una empresa argentina con 25 años de experiencia desarrollando proyectos industriales, logísticos y comerciales. Nos especializamos en estructuras metálicas, obra civil y soluciones llave en mano, acompañando a cada cliente desde la idea inicial hasta la entrega final.",
+      "cta": "CONOCÉ NUESTRA EMPRESA",
+      "mission": {
+        "title": "Misión",
+        "description": "Construir soluciones que impulsen a nuestros clientes."
+      },
+      "vision": {
+        "title": "Visión",
+        "description": "Ser la empresa referente en construcción industrial del país."
+      },
+      "values": {
+        "title": "Valores",
+        "description": "Compromiso, calidad, seguridad, responsabilidad, trabajo en equipo, innovación y transparencia."
+      },
+      "sustainability": {
+        "title": "Construcción Sustentable",
+        "description": "Comprometidos con el medio ambiente, optimizando recursos y construyendo un futuro mejor.",
+        "cta": "CONOCÉ MÁS",
+        "features": {
+          "materials": "Uso eficiente de materiales",
+          "waste": "Reducción de residuos",
+          "energy": "Eficiencia energética"
+        }
+      }
     }
   },
   "Forex": {
     "hero": {
-      "badge": "Badge",
+      "badge": "Distintivo",
       "title": "Título",
       "description": "Descripción.",
       "primaryAction": "Acción principal"
@@ -116,7 +182,7 @@
     "BAD_REQUEST": "La solicitud no es válida.",
     "VALIDATION_ERROR": "Revisa los datos ingresados.",
     "UNAUTHORIZED": "Necesitas iniciar sesión.",
-    "FORBIDDEN": "No tienes permiso para esta acción.",
+    "FORBIDDEN": "No tienes permiso para realizar esta acción.",
     "NOT_FOUND": "El recurso no existe.",
     "CONFLICT": "El recurso ya existe o está en conflicto.",
     "RATE_LIMITED": "Demasiadas solicitudes. Intenta más tarde.",

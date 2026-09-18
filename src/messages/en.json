@@ -69,16 +69,82 @@
       "goToSlide": "Go to slide {index}"
     },
     "heroTrustBar": {
-      "experience": { "icon": "history", "title": "25 YEARS", "subtitle": "of experience" },
-      "solutions": { "icon": "key-round", "title": "SOLUTIONS", "subtitle": "turnkey" },
-      "quality": { "icon": "shield-check", "title": "QUALITY", "subtitle": "guaranteed" },
+      "experience": {
+        "icon": "history",
+        "title": "25 YEARS",
+        "subtitle": "of experience"
+      },
+      "solutions": {
+        "icon": "key-round",
+        "title": "SOLUTIONS",
+        "subtitle": "turnkey"
+      },
+      "quality": {
+        "icon": "shield-check",
+        "title": "QUALITY",
+        "subtitle": "guaranteed"
+      },
       "team": {
         "icon": "hard-hat",
         "title": "PROFESSIONAL TEAM",
         "subtitle": "and skilled labor"
       },
-      "sustainability": { "icon": "leaf", "title": "CONSTRUCTION", "subtitle": "sustainable" },
-      "coverage": { "icon": "map-pin", "title": "COVERAGE", "subtitle": "nationwide" }
+      "sustainability": {
+        "icon": "leaf",
+        "title": "CONSTRUCTION",
+        "subtitle": "sustainable"
+      },
+      "coverage": {
+        "icon": "map-pin",
+        "title": "COVERAGE",
+        "subtitle": "nationwide"
+      }
+    },
+    "servicesSection": {
+      "eyebrow": "Our Services",
+      "title": {
+        "line1": "Everything your project needs,",
+        "line2": "in a single company."
+      },
+      "description": "We integrate engineering, manufacturing, and construction to offer you efficient, safe, and high-quality solutions.",
+      "cta": "SEE ALL SERVICES",
+      "services": {
+        "s1": "Industrial Warehouses",
+        "s2": "Metal Shelters",
+        "s3": "Metal Structures",
+        "s4": "Industrial Flooring",
+        "s5": "Civil Works & Masonry",
+        "s6": "Turnkey Projects",
+        "s7": "Earthmoving"
+      }
+    },
+    "aboutSection": {
+      "eyebrow": "About NyG Estructuras",
+      "title": "25 years building in Argentina",
+      "description": "We are an Argentine company with 25 years of experience developing industrial, logistics, and commercial projects. We specialize in metal structures, civil works, and turnkey solutions, accompanying each client from the initial idea to final delivery.",
+      "cta": "LEARN ABOUT OUR COMPANY",
+      "mission": {
+        "title": "Mission",
+        "description": "To build solutions that propel our clients."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To be the benchmark company in industrial construction in the country."
+      },
+      "values": {
+        "title": "Values",
+        "description": "Commitment, quality, safety, responsibility, teamwork, innovation, and transparency."
+      },
+      "sustainability": {
+        "title": "Sustainable Construction",
+        "description": "Committed to the environment, optimizing resources and building a better future.",
+        "cta": "LEARN MORE",
+        "features": {
+          "materials": "Efficient use of materials",
+          "waste": "Waste reduction",
+          "energy": "Energy efficiency"
+        }
+      }
     }
   },
   "Forex": {

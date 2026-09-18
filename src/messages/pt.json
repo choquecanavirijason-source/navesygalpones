@@ -69,16 +69,82 @@
       "goToSlide": "Ir para o slide {index}"
     },
     "heroTrustBar": {
-      "experience": { "icon": "history", "title": "25 ANOS", "subtitle": "de experiência" },
-      "solutions": { "icon": "key-round", "title": "SOLUÇÕES", "subtitle": "chave na mão" },
-      "quality": { "icon": "shield-check", "title": "QUALIDADE", "subtitle": "garantida" },
+      "experience": {
+        "icon": "history",
+        "title": "25 ANOS",
+        "subtitle": "de experiência"
+      },
+      "solutions": {
+        "icon": "key-round",
+        "title": "SOLUÇÕES",
+        "subtitle": "chave na mão"
+      },
+      "quality": {
+        "icon": "shield-check",
+        "title": "QUALIDADE",
+        "subtitle": "garantida"
+      },
       "team": {
         "icon": "hard-hat",
         "title": "EQUIPE PROFISSIONAL",
         "subtitle": "e mão de obra qualificada"
       },
-      "sustainability": { "icon": "leaf", "title": "CONSTRUÇÃO", "subtitle": "sustentável" },
-      "coverage": { "icon": "map-pin", "title": "COBERTURA", "subtitle": "em todo o país" }
+      "sustainability": {
+        "icon": "leaf",
+        "title": "CONSTRUÇÃO",
+        "subtitle": "sustentável"
+      },
+      "coverage": {
+        "icon": "map-pin",
+        "title": "COBERTURA",
+        "subtitle": "em todo o país"
+      }
+    },
+    "servicesSection": {
+      "eyebrow": "Nossos Servi�os",
+      "title": {
+        "line1": "Tudo o que sua obra precisa,",
+        "line2": "em uma �nica empresa."
+      },
+      "description": "Integramos engenharia, fabrica��o e constru��o para oferecer solu��es eficientes, seguras e de alta qualidade.",
+      "cta": "VER TODOS OS SERVI�OS",
+      "services": {
+        "s1": "Galp�es Industriais",
+        "s2": "Abrigos Met�licos",
+        "s3": "Estruturas Met�licas",
+        "s4": "Pisos Industriais",
+        "s5": "Obras Civis e Alvenaria",
+        "s6": "Projetos Chave na M�o",
+        "s7": "Movimenta��o de Terra"
+      }
+    },
+    "aboutSection": {
+      "eyebrow": "Sobre a NyG Estructuras",
+      "title": "25 anos construindo na Argentina",
+      "description": "Somos uma empresa argentina com 25 anos de experi�ncia no desenvolvimento de projetos industriais, log�sticos e comerciais. Somos especializados em estruturas met�licas, obras civis e solu��es chave na m�o, acompanhando cada cliente desde a ideia inicial at� a entrega final.",
+      "cta": "CONHE�A NOSSA EMPRESA",
+      "mission": {
+        "title": "Miss�o",
+        "description": "Construir solu��es que impulsionem nossos clientes."
+      },
+      "vision": {
+        "title": "Vis�o",
+        "description": "Ser a empresa de refer�ncia em constru��o industrial no pa�s."
+      },
+      "values": {
+        "title": "Valores",
+        "description": "Comprometimento, qualidade, seguran�a, responsabilidade, trabalho em equipe, inova��o e transpar�ncia."
+      },
+      "sustainability": {
+        "title": "Constru��o Sustent�vel",
+        "description": "Comprometidos com o meio ambiente, otimizando recursos e construindo um futuro melhor.",
+        "cta": "SAIBA MAIS",
+        "features": {
+          "materials": "Uso eficiente de materiais",
+          "waste": "Redu��o de res�duos",
+          "energy": "Efici�ncia energ�tica"
+        }
+      }
     }
   },
   "Forex": {

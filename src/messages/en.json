@@ -79,6 +79,90 @@
       },
       "sustainability": { "icon": "leaf", "title": "CONSTRUCTION", "subtitle": "sustainable" },
       "coverage": { "icon": "map-pin", "title": "COVERAGE", "subtitle": "nationwide" }
+    },
+    "equipo": {
+      "title": "TECHNOLOGY AND HUMAN TALENT MAKE THE DIFFERENCE",
+      "description": "We have a team of engineers, architects, designers, specialized operators, site staff, administration and sales, working together to make every project a success.",
+      "ctaLabel": "OUR TEAM",
+      "stats": [
+        {
+          "value": "+120",
+          "label": "PROFESSIONALS and operators"
+        },
+        {
+          "value": "+500",
+          "label": "PROJECTS completed"
+        },
+        {
+          "value": "+1,500,000 m²",
+          "label": "BUILT across the country"
+        },
+        {
+          "value": "100%",
+          "label": "COMMITMENT to our clients"
+        }
+      ]
+    },
+    "obras": {
+      "badge": "OUR PROJECTS",
+      "title": "REAL PROJECTS, CONCRETE RESULTS.",
+      "description": "Every project reflects our experience and our commitment to our clients.",
+      "ctaLabel": "SEE ALL PROJECTS",
+      "projects": [
+        {
+          "name": "Logistics center",
+          "location": "Escobar, Bs. As.",
+          "size": "2.500 m²"
+        },
+        {
+          "name": "Industrial plant",
+          "location": "Pilar, Bs. As.",
+          "size": "1.800 m²"
+        },
+        {
+          "name": "Commercial warehouse",
+          "location": "Tigre, Bs. As.",
+          "size": "1.200 m²"
+        },
+        {
+          "name": "Agro-industrial shed",
+          "location": "San Pedro, Bs. As.",
+          "size": "3.000 m²"
+        }
+      ],
+      "testimonial": {
+        "quote": "They met every deadline, the quality was excellent and their team was always there. Highly recommended.",
+        "authorName": "Martín López",
+        "authorRole": "General Manager",
+        "authorCompany": "Agroindustrias del Norte",
+        "rating": "5"
+      }
+    },
+    "contacto": {
+      "title": "GOT A PROJECT\nIN MIND?",
+      "description": "Let's talk. Our team advises you and prepares a tailor-made proposal.",
+      "benefits": {
+        "fast": "Fast response",
+        "advice": "Free advice",
+        "privacy": "Confidentiality"
+      },
+      "form": {
+        "type": "Type of project",
+        "typeOptions": [
+          "Steel structures",
+          "Civil works",
+          "Industrial flooring",
+          "Turnkey project"
+        ],
+        "area": "Approx. m²",
+        "name": "Full name",
+        "city": "City / Town",
+        "company": "Company (optional)",
+        "phone": "Phone / WhatsApp",
+        "message": "Tell us about your project...",
+        "submit": "SEND INQUIRY"
+      },
+      "tagline": "A COUNTRY IN CONSTANT GROWTH. SO ARE WE."
     }
   },
   "Forex": {

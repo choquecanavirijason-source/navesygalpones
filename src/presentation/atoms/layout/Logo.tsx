@@ -1,20 +1,35 @@
 import Image from "next/image";
+import { cva, type VariantProps } from "class-variance-authority";
 
 import { ROUTES } from "@/constants/routes";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-interface LogoProps {
+/** Alto del isotipo. El ancho sale de la relación de aspecto del SVG. */
+const logoVariants = cva("w-auto", {
+  variants: {
+    size: {
+      sm: "h-10",
+      md: "h-12 md:h-14",
+      lg: "h-14 md:h-20",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+  },
+});
+
+interface LogoProps extends VariantProps<typeof logoVariants> {
   name: string;
   className?: string;
 }
 
 /**
- * Logo NyG recortado de `public/logos/logoNyG.jpeg` (lockup cuadrado con mucho
- * margen propio): ícono + wordmark, sin la leyenda inferior. Sin texto al lado;
- * `name` queda como `alt` para accesibilidad.
+ * Isotipo NyG (`public/logos/logo.svg`). Sin texto al lado: `name` queda como
+ * `alt` para accesibilidad. El alto se controla con `size`, nunca con clases
+ * sueltas, para que el header y el footer no se desalineen.
  */
-export function Logo({ name, className }: LogoProps) {
+export function Logo({ name, size, className }: LogoProps) {
   return (
     <Link
       href={ROUTES.home}
@@ -23,7 +38,14 @@ export function Logo({ name, className }: LogoProps) {
         className,
       )}
     >
-      <Image src="/logos/logoNyG-header.png" alt={name} width={1055} height={580} className="h-10 w-auto" />
+      <Image
+        src="/logos/logo.svg"
+        alt={name}
+        width={534}
+        height={419}
+        priority
+        className={logoVariants({ size })}
+      />
     </Link>
   );
 }

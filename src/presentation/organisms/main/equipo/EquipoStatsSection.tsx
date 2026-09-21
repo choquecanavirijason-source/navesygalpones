@@ -31,7 +31,11 @@ export function EquipoStatsSection({ id = "equipo" }: EquipoStatsSectionProps) {
   const stats = t.raw("stats") as Stat[];
 
   return (
-    <section id={id} aria-labelledby={titleId} className="relative overflow-hidden bg-black">
+    <section
+      id={id}
+      aria-labelledby={titleId}
+      className="relative flex min-h-[calc(100dvh-var(--topbar-height)-var(--header-height))] items-center overflow-hidden bg-black"
+    >
       {/* Capa 2: fondo principal (va primero en el DOM para quedar detrás del obrero) */}
       <div className="absolute inset-0 z-0">
         <Image src="/images/fondo2.jpg" alt="" fill sizes="100vw" className="object-cover" />
@@ -61,7 +65,7 @@ export function EquipoStatsSection({ id = "equipo" }: EquipoStatsSectionProps) {
         />
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 items-center gap-4 px-4 py-6 md:py-8 md:grid-cols-[minmax(0,1fr)_auto] md:gap-8 md:pr-6 md:pl-[26%] lg:pr-10">
+      <div className="relative z-10 grid w-full grid-cols-1 items-center gap-4 px-4 py-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-8 md:py-12 md:pr-6 md:pl-[26%] lg:pr-10">
         <Reveal className="flex max-w-lg flex-col items-start gap-3 text-white">
           <h2 id={titleId} className="text-xl leading-tight font-bold tracking-tight text-balance md:text-2xl">
             {t("title")}

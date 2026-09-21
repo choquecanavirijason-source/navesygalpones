@@ -3,3 +3,4 @@
  * Un archivo por organismo: `@import "./<organism-name>.css";`
  */
 @import "./hero.css";
+@import "./hero-scrollytelling.css";

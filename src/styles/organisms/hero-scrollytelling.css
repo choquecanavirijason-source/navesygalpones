@@ -1,0 +1,229 @@
+@layer components {
+  /*
+   * Hero de scrollytelling. El pin de ScrollTrigger fija la sección con `position: fixed`
+   * y compensa el hueco con su propio pin-spacer: por eso la sección mide exactamente
+   * 100vh y recorta su contenido, así el pin no produce salto de layout.
+   */
+  .hero-scroll {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: var(--graphite);
+    color: var(--white);
+  }
+
+  .hero-scroll__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /*
+   * El clip 2 se apila sobre el 1 y entra subiendo su opacidad en el punto de corte. Arranca
+   * invisible para que el cruce lo gobierne únicamente el scrub.
+   */
+  .hero-scroll__video--next {
+    opacity: 0;
+  }
+
+  /* Legibilidad del copy sobre el video: degradado desde el grafito de marca. */
+  .hero-scroll__scrim {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--graphite) 92%, transparent) 0%,
+      color-mix(in srgb, var(--graphite) 62%, transparent) 42%,
+      color-mix(in srgb, var(--graphite) 18%, transparent) 100%
+    );
+  }
+
+  .hero-scroll__stage {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    /* El header del sitio es sticky y opaco: el copy arranca por debajo de su franja. */
+    padding-top: calc(var(--topbar-height) + var(--header-height));
+    padding-bottom: 6rem;
+  }
+
+  /* Las dos capas de copy se superponen: ninguna empuja a la otra al hacer fundido. */
+  .hero-scroll__layer {
+    position: absolute;
+    inset: calc(var(--topbar-height) + var(--header-height)) 0 6rem 0;
+    display: flex;
+    align-items: center;
+    /* Solo se anima opacity y transform; se avisa al compositor. */
+    will-change: opacity, transform;
+  }
+
+  .hero-scroll__layer--outro {
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+  }
+
+  .hero-scroll__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-scroll__copy--centered {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-scroll__eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--brand-orange);
+  }
+
+  .hero-scroll__title {
+    max-width: 22ch;
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.02;
+    /* Tracking negativo: a este cuerpo el espaciado por defecto se ve suelto. */
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  .hero-scroll__description {
+    max-width: 44ch;
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--white) 88%, transparent);
+    text-wrap: pretty;
+  }
+
+  .hero-scroll__outro-title {
+    max-width: 18ch;
+    font-size: clamp(1.75rem, 5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  .hero-scroll__hint {
+    position: absolute;
+    right: 0;
+    bottom: 1.75rem;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+    /* Centrado por inset, no por translate: el scrub escribe su propio transform en este nodo. */
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--white) 78%, transparent);
+    will-change: opacity, transform;
+  }
+
+  .hero-scroll__hint-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    animation: hero-scroll-hint 2.4s ease-in-out infinite;
+  }
+
+  @keyframes hero-scroll-hint {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(0.375rem);
+      opacity: 1;
+    }
+  }
+
+  /* ─── Loader de marca ─────────────────────────────────────────────────── */
+
+  .hero-scroll__loader {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--graphite);
+  }
+
+  .hero-scroll__loader-mark {
+    width: auto;
+    height: 4.5rem;
+    animation: hero-scroll-mark 1.6s ease-in-out infinite;
+  }
+
+  @keyframes hero-scroll-mark {
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: scale(0.94);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .hero-scroll__loader-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--white) 70%, transparent);
+  }
+
+  .hero-scroll__loader-track {
+    width: min(14rem, 60vw);
+    height: 2px;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--white) 20%, transparent);
+  }
+
+  /* Se anima con scaleX en vez de width: width provoca reflow en cada tick del sondeo. */
+  .hero-scroll__loader-bar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+    transform: scaleX(0);
+    background-color: var(--brand-orange);
+  }
+
+  .hero-scroll__loader-value {
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    color: color-mix(in srgb, var(--white) 55%, transparent);
+  }
+
+  /*
+   * prefers-reduced-motion: sin pin, sin scrub y sin loop. Queda el mismo copy sobre el
+   * frame estático de arranque, con la sección en flujo normal.
+   */
+  .hero-scroll--static .hero-scroll__layer {
+    position: static;
+    inset: auto;
+    height: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-scroll__hint-icon,
+    .hero-scroll__loader-mark {
+      animation: none;
+    }
+  }
+}

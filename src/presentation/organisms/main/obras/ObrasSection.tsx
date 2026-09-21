@@ -36,8 +36,12 @@ export function ObrasSection({ id = "obras" }: ObrasSectionProps) {
   const rating = Number(t("testimonial.rating"));
 
   return (
-    <section id={id} aria-labelledby={titleId} className="bg-background">
-      <Container className="grid grid-cols-1 items-stretch gap-4 py-4 lg:grid-cols-[22fr_78fr]">
+    <section
+      id={id}
+      aria-labelledby={titleId}
+      className="flex min-h-[calc(100dvh-var(--topbar-height)-var(--header-height))] items-center bg-background"
+    >
+      <Container className="grid grid-cols-1 items-stretch gap-6 py-10 lg:grid-cols-[22fr_78fr] lg:gap-8 lg:py-14">
         <Reveal className="flex flex-col items-start justify-center gap-2">
           <ObrasEyebrow>{t("badge")}</ObrasEyebrow>
           <h2 id={titleId} className="text-xl leading-snug font-extrabold tracking-tight text-balance text-[#282828] md:text-2xl">
@@ -60,7 +64,7 @@ export function ObrasSection({ id = "obras" }: ObrasSectionProps) {
         </Reveal>
 
         {/* Galería + testimonio comparten fila: el testimonio iguala la altura de las tarjetas. */}
-        <div className="grid grid-cols-1 items-center gap-4 lg:grid-cols-[56fr_22fr]">
+        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[56fr_22fr] lg:gap-8">
         <Reveal delay={0.1} className="flex flex-col justify-center">
           <ObrasGallery
             projects={projects}

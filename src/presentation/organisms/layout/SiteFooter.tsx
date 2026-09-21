@@ -17,7 +17,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border/60">
       <Container className="flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
-        <Logo name={siteName} />
+        <Logo name={siteName} size="sm" />
         <NavList items={items} ariaLabel={tNav("legalNavLabel")} />
         <Text size="sm" tone="muted">
           {t("copyright", { year, siteName })}

@@ -5,6 +5,10 @@
       "title": "Home",
       "description": "Home page description."
     },
+    "quotes": {
+      "title": "Quotes",
+      "description": "Request a quote for your project."
+    },
     "forex": {
       "title": "Forex",
       "description": "Forex page description."
@@ -42,6 +46,7 @@
       "about": "About Us",
       "services": "Services",
       "projects": "Projects",
+      "quotes": "Quotes",
       "sustainability": "Sustainability",
       "faq": "FAQ",
       "contact": "Contact"
@@ -63,22 +68,92 @@
       "ctaSecondary": "SEE OUR PROJECTS",
       "tagline": "Today's ideas, tomorrow's infrastructure."
     },
+    "heroScroll": {
+      "scrollHint": "Scroll to explore",
+      "loading": "Loading experience"
+    },
     "heroCarousel": {
       "previous": "Previous slide",
       "next": "Next slide",
       "goToSlide": "Go to slide {index}"
     },
     "heroTrustBar": {
-      "experience": { "icon": "history", "title": "25 YEARS", "subtitle": "of experience" },
-      "solutions": { "icon": "key-round", "title": "SOLUTIONS", "subtitle": "turnkey" },
-      "quality": { "icon": "shield-check", "title": "QUALITY", "subtitle": "guaranteed" },
+      "experience": {
+        "icon": "history",
+        "title": "25 YEARS",
+        "subtitle": "of experience"
+      },
+      "solutions": {
+        "icon": "key-round",
+        "title": "SOLUTIONS",
+        "subtitle": "turnkey"
+      },
+      "quality": {
+        "icon": "shield-check",
+        "title": "QUALITY",
+        "subtitle": "guaranteed"
+      },
       "team": {
         "icon": "hard-hat",
         "title": "PROFESSIONAL TEAM",
         "subtitle": "and skilled labor"
       },
-      "sustainability": { "icon": "leaf", "title": "CONSTRUCTION", "subtitle": "sustainable" },
-      "coverage": { "icon": "map-pin", "title": "COVERAGE", "subtitle": "nationwide" }
+      "sustainability": {
+        "icon": "leaf",
+        "title": "CONSTRUCTION",
+        "subtitle": "sustainable"
+      },
+      "coverage": {
+        "icon": "map-pin",
+        "title": "COVERAGE",
+        "subtitle": "nationwide"
+      }
+    },
+    "servicesSection": {
+      "eyebrow": "Our Services",
+      "title": {
+        "line1": "Everything your project needs,",
+        "line2": "in a single company."
+      },
+      "description": "We integrate engineering, manufacturing, and construction to offer you efficient, safe, and high-quality solutions.",
+      "cta": "SEE ALL SERVICES",
+      "services": {
+        "s1": "Industrial Warehouses",
+        "s2": "Metal Shelters",
+        "s3": "Metal Structures",
+        "s4": "Industrial Flooring",
+        "s5": "Civil Works & Masonry",
+        "s6": "Turnkey Projects",
+        "s7": "Earthmoving"
+      }
+    },
+    "aboutSection": {
+      "eyebrow": "About NyG Estructuras",
+      "title": "25 years building in Argentina",
+      "description": "We are an Argentine company with 25 years of experience developing industrial, logistics, and commercial projects. We specialize in metal structures, civil works, and turnkey solutions, accompanying each client from the initial idea to final delivery.",
+      "cta": "LEARN ABOUT OUR COMPANY",
+      "mission": {
+        "title": "Mission",
+        "description": "To build solutions that propel our clients."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To be the benchmark company in industrial construction in the country."
+      },
+      "values": {
+        "title": "Values",
+        "description": "Commitment, quality, safety, responsibility, teamwork, innovation, and transparency."
+      },
+      "sustainability": {
+        "title": "Sustainable Construction",
+        "description": "Committed to the environment, optimizing resources and building a better future.",
+        "cta": "LEARN MORE",
+        "features": {
+          "materials": "Efficient use of materials",
+          "waste": "Waste reduction",
+          "energy": "Energy efficiency"
+        }
+      }
     },
     "equipo": {
       "title": "TECHNOLOGY AND HUMAN TALENT MAKE THE DIFFERENCE",
@@ -208,5 +283,284 @@
     "TIMEOUT": "The server took too long to respond.",
     "SERVICE_UNAVAILABLE": "The service is unavailable.",
     "UPSTREAM_ERROR": "The external service returned an error."
+  },
+  "Quotes": {
+    "hero": {
+      "badge": "QUOTES",
+      "title": "Tell us what you need to build",
+      "description": "Fill in the form and our team will review your project to send you a tailored proposal."
+    },
+    "steps": {
+      "type": "Project type",
+      "details": "Your project",
+      "context": "Location and timing",
+      "contact": "Contact",
+      "summary": "Summary"
+    },
+    "progress": "Step {current} of {total}: {step}",
+    "nav": {
+      "back": "Back",
+      "next": "Continue",
+      "restart": "Start over"
+    },
+    "selector": {
+      "title": "What do you need to build?",
+      "description": "Pick an option. We explain what it includes before you continue.",
+      "ideal": "Best for",
+      "detail": "See details",
+      "hideDetail": "Hide details"
+    },
+    "categories": {
+      "tinglado": {
+        "name": "Open-sided shed",
+        "short": "Steel structure with columns and a sheet-metal roof. Usually open on the sides.",
+        "full": "Steel structure made up of columns, roof framing and a sheet-metal roof. It is usually open on its sides.",
+        "ideal": "Open storage, parking, loading areas, machinery protection or production spaces."
+      },
+      "galpon": {
+        "name": "Industrial warehouse",
+        "short": "Roofed building closed with sheet metal and/or masonry.",
+        "full": "Steel building roofed and closed on its sides with sheet metal and/or masonry. It can include an industrial floor, gates, insulation and other add-ons.",
+        "ideal": "Warehouses, factories, workshops and distribution centres."
+      },
+      "nave": {
+        "name": "Industrial plant",
+        "short": "Industrial building designed around your activity.",
+        "full": "Industrial building designed as a whole around the activity that will take place inside. It can include structure, cladding, floor, services, offices, docks and operating areas.",
+        "ideal": "Production plants, logistics and more complex industrial projects."
+      },
+      "estructura": {
+        "name": "Steel structure",
+        "short": "Fabrication and/or erection of the load-bearing structure.",
+        "full": "Fabrication and/or erection of the project's load-bearing structure, without necessarily including roofing, cladding or civil works.",
+        "ideal": "When you only need the structure."
+      },
+      "ampliacion": {
+        "name": "Warehouse extension",
+        "short": "Extension of an existing building.",
+        "full": "Extension of an existing building to add covered area, height or operating capacity. We will ask for measurements and, if you have them, drawings of the current structure.",
+        "ideal": "Adding covered area, height or operating capacity."
+      },
+      "piso": {
+        "name": "Industrial floor",
+        "short": "Concrete floor for industrial traffic and operation.",
+        "full": "Concrete floor prepared for traffic, storage or industrial activity, with the finish the project requires.",
+        "ideal": "Plants, warehouses and logistics centres."
+      },
+      "movimiento": {
+        "name": "Earthworks",
+        "short": "Preparing and levelling the site before building.",
+        "full": "Preparation, levelling, excavation, filling and compaction of the site before the works begin.",
+        "ideal": "Preparing the site for floors, foundations, yards or new buildings."
+      },
+      "obraCivil": {
+        "name": "Civil works / masonry",
+        "short": "Foundations, footings, walls and civil works.",
+        "full": "Foundations, footings, walls, masonry and other civil works related to the project.",
+        "ideal": "Completing the civil work packages of your project."
+      },
+      "llaveEnMano": {
+        "name": "Turnkey project",
+        "short": "End-to-end solution coordinated by NyG at every stage.",
+        "full": "End-to-end solution where NyG Estructuras coordinates the contracted stages of the project through to handover.",
+        "ideal": "Anyone looking for a single point of responsibility."
+      },
+      "otro": {
+        "name": "Other project",
+        "short": "Extensions, refurbishments or special works.",
+        "full": "For extensions, refurbishments or special works that do not fit the categories above.",
+        "ideal": "Tell us briefly what you need."
+      }
+    },
+    "confirm": {
+      "selected": "You selected: {category}",
+      "question": "Is this what you need?",
+      "yes": "Yes, continue",
+      "change": "Change project type"
+    },
+    "details": {
+      "title": "Tell us about your project",
+      "description": "Approximate figures are fine: they help us size the proposal.",
+      "areaHint": "The area is calculated from the width and the length."
+    },
+    "context": {
+      "title": "Where is the site?",
+      "description": "With the location and timing we can estimate logistics and availability."
+    },
+    "contact": {
+      "title": "How should we reach you?",
+      "description": "Last step: leave us your details and we will get back to you shortly.",
+      "privacy": "Your data is protected. We do not share your information with third parties."
+    },
+    "summary": {
+      "title": "Review your request before sending",
+      "description": "If something is off, you can go back to any step and correct it.",
+      "category": "Project type",
+      "location": "Location",
+      "edit": "Edit",
+      "submit": "Request quote",
+      "empty": "Not specified",
+      "attachments": "Do you have drawings, sketches or photos? You can attach them in the WhatsApp chat."
+    },
+    "success": {
+      "title": "We received your project",
+      "id": "Request: {id}",
+      "description": "Check that the message is complete and send it over WhatsApp so the team can pick it up.",
+      "whatsapp": "Continue on WhatsApp",
+      "whatsappNote": "We prepared a message with the ID, project type, area and town.",
+      "restart": "Submit another request",
+      "pdf": "Download PDF",
+      "pdfError": "We could not generate the PDF. Please try again."
+    },
+    "fields": {
+      "width": "Approximate width",
+      "length": "Approximate length",
+      "height": "Height",
+      "area": "Area",
+      "usage": "Intended use",
+      "roofType": "Roof type",
+      "insulation": "Do you need insulation?",
+      "industrialFloor": "Do you need an industrial floor?",
+      "enclosures": "Cladding",
+      "masonry": "Does it include masonry?",
+      "gates": "Gates (quantity and type)",
+      "officesBathrooms": "Do you need offices or bathrooms?",
+      "docks": "Do you need loading docks?",
+      "installations": "Services required",
+      "purpose": "Purpose of the structure",
+      "hasPlans": "Do you have drawings or a design?",
+      "structureType": "Structure type (if you know it)",
+      "scope": "Fabrication, erection or both?",
+      "currentMeasures": "Current measurements (width × length × height)",
+      "operationalContinuity": "Will the plant keep operating during the works?",
+      "interferences": "Constraints to keep in mind",
+      "loads": "Expected loads or traffic",
+      "landCondition": "Site condition",
+      "finish": "Finish",
+      "newOrExisting": "New build or over an existing floor?",
+      "objective": "Goal of the earthworks",
+      "earthwork": "Filling or excavation?",
+      "slopes": "Approximate level differences",
+      "equipmentAccess": "Is there access for machinery?",
+      "currentState": "Current site condition",
+      "workItems": "Work packages required",
+      "quantities": "Approximate quantities",
+      "siteStatus": "Works status",
+      "turnkeyScope": "Which stages should NyG coordinate?",
+      "description": "Tell us what you need",
+      "province": "Province",
+      "city": "Town",
+      "landAvailable": "Do you already have the site?",
+      "stage": "Project stage",
+      "startDate": "When would you like to start?",
+      "deadline": "Deadline (optional)",
+      "name": "Full name",
+      "company": "Company (optional)",
+      "whatsapp": "Phone / WhatsApp",
+      "email": "Email",
+      "preferredTime": "Preferred time to be contacted"
+    },
+    "placeholder": {
+      "select": "Select an option"
+    },
+    "options": {
+      "yesNoTbd": {
+        "yes": "Yes",
+        "no": "No",
+        "tbd": "To be defined"
+      },
+      "yesNoProgress": {
+        "yes": "Yes",
+        "no": "No",
+        "progress": "In progress"
+      },
+      "roof": {
+        "sheet": "Sheet metal",
+        "insulated": "Insulated sheet",
+        "tbd": "To be defined"
+      },
+      "enclosure": {
+        "sheet": "Sheet metal",
+        "masonry": "Masonry",
+        "mixed": "Mixed",
+        "tbd": "To be defined"
+      },
+      "scope": {
+        "fabrication": "Fabrication only",
+        "assembly": "Erection only",
+        "both": "Fabrication and erection",
+        "tbd": "To be defined"
+      },
+      "land": {
+        "ready": "Ready",
+        "leveling": "Needs levelling",
+        "raw": "Not prepared",
+        "tbd": "To be defined"
+      },
+      "newExisting": {
+        "new": "New build",
+        "existing": "Over an existing floor",
+        "tbd": "To be defined"
+      },
+      "earthwork": {
+        "fill": "Filling",
+        "excavation": "Excavation",
+        "both": "Both",
+        "tbd": "To be defined"
+      },
+      "siteStatus": {
+        "notStarted": "Not started",
+        "inProgress": "Under way",
+        "tbd": "To be defined"
+      },
+      "stage": {
+        "idea": "Initial idea",
+        "preliminary": "Preliminary design",
+        "defined": "Defined project",
+        "ready": "Ready to build"
+      },
+      "start": {
+        "asap": "As soon as possible",
+        "months1to3": "1 to 3 months",
+        "months3to6": "3 to 6 months",
+        "later": "More than 6 months"
+      },
+      "contactTime": {
+        "morning": "Morning",
+        "afternoon": "Afternoon",
+        "any": "Any time"
+      },
+      "turnkey": {
+        "project": "Design",
+        "soil": "Earthworks",
+        "foundations": "Footings and foundations",
+        "structure": "Structure",
+        "roof": "Roofing",
+        "enclosures": "Cladding",
+        "floor": "Industrial floor",
+        "masonry": "Masonry",
+        "installations": "Services",
+        "extras": "Add-ons"
+      }
+    },
+    "validation": {
+      "required": "Please complete this field.",
+      "email": "Check the email address.",
+      "phone": "Check the phone number.",
+      "number": "Enter a number greater than zero.",
+      "summary": "Please review the highlighted fields."
+    },
+    "whatsapp": {
+      "intro": "Hi NyG Estructuras, I would like a quote for a project.",
+      "outro": "Looking forward to hearing from you. Thanks!"
+    },
+    "pdf": {
+      "brand": "NyG ESTRUCTURAS",
+      "title": "Quote request",
+      "date": "Date: {date}",
+      "page": "Page {current} of {total}",
+      "footer": "Document generated from the quote form on the website.",
+      "filename": "quote-request"
+    }
   }
 }

@@ -1,6 +1,7 @@
 /** Rutas públicas de la landing, sin prefijo de idioma (lo agrega next-intl). */
 export const ROUTES = {
   home: "/",
+  quotes: "/cotizaciones",
   forex: "/markets/forex",
   privacy: "/company/privacy",
   terms: "/company/terms",
@@ -11,6 +12,7 @@ export type AppRoute = (typeof ROUTES)[keyof typeof ROUTES];
 /** Rutas incluidas en `sitemap.xml`. */
 export const SITEMAP_ROUTES = [
   ROUTES.home,
+  ROUTES.quotes,
   ROUTES.forex,
   ROUTES.privacy,
   ROUTES.terms,

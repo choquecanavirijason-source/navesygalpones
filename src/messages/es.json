@@ -5,6 +5,10 @@
       "title": "Inicio",
       "description": "Descripción de la página de inicio."
     },
+    "quotes": {
+      "title": "Cotizaciones",
+      "description": "Solicitá una cotización para tu proyecto."
+    },
     "forex": {
       "title": "Forex",
       "description": "Descripción de la página de forex."
@@ -33,7 +37,7 @@
   "Header": {
     "topbar": {
       "coverageLabel": "Cobertura en toda Argentina",
-      "phoneLabel": "Llamamos",
+      "phoneLabel": "Llamanos",
       "phoneNumber": "11 4493-6915",
       "ctaButton": "SOLICITÁ TU PRESUPUESTO"
     },
@@ -42,8 +46,9 @@
       "about": "Nosotros",
       "services": "Servicios",
       "projects": "Obras",
+      "quotes": "Cotizaciones",
       "sustainability": "Sustentabilidad",
-      "faq": "FAQ",
+      "faq": "Preguntas frecuentes",
       "contact": "Contacto"
     }
   },
@@ -63,22 +68,92 @@
       "ctaSecondary": "VER NUESTROS PROYECTOS",
       "tagline": "Ideas de hoy, infraestructura del mañana."
     },
+    "heroScroll": {
+      "scrollHint": "Desplazá para recorrer",
+      "loading": "Cargando experiencia"
+    },
     "heroCarousel": {
       "previous": "Diapositiva anterior",
       "next": "Diapositiva siguiente",
       "goToSlide": "Ir a la diapositiva {index}"
     },
     "heroTrustBar": {
-      "experience": { "icon": "history", "title": "25 AÑOS", "subtitle": "de experiencia" },
-      "solutions": { "icon": "key-round", "title": "SOLUCIONES", "subtitle": "llave en mano" },
-      "quality": { "icon": "shield-check", "title": "CALIDAD", "subtitle": "garantizada" },
+      "experience": {
+        "icon": "history",
+        "title": "25 AÑOS",
+        "subtitle": "de experiencia"
+      },
+      "solutions": {
+        "icon": "key-round",
+        "title": "SOLUCIONES",
+        "subtitle": "llave en mano"
+      },
+      "quality": {
+        "icon": "shield-check",
+        "title": "CALIDAD",
+        "subtitle": "garantizada"
+      },
       "team": {
         "icon": "hard-hat",
         "title": "EQUIPO PROFESIONAL",
         "subtitle": "y mano de obra calificada"
       },
-      "sustainability": { "icon": "leaf", "title": "CONSTRUCCIÓN", "subtitle": "sustentable" },
-      "coverage": { "icon": "map-pin", "title": "COBERTURA", "subtitle": "en todo el país" }
+      "sustainability": {
+        "icon": "leaf",
+        "title": "CONSTRUCCIÓN",
+        "subtitle": "sustentable"
+      },
+      "coverage": {
+        "icon": "map-pin",
+        "title": "COBERTURA",
+        "subtitle": "en todo el país"
+      }
+    },
+    "servicesSection": {
+      "eyebrow": "Nuestros Servicios",
+      "title": {
+        "line1": "Todo lo que tu obra necesita,",
+        "line2": "en una sola empresa."
+      },
+      "description": "Integramos ingeniería, fabricación y construcción para ofrecerte soluciones eficientes, seguras y de alta calidad.",
+      "cta": "CONOCÉ TODOS LOS SERVICIOS",
+      "services": {
+        "s1": "Galpones Industriales",
+        "s2": "Tinglados Metálicos",
+        "s3": "Estructuras Metálicas",
+        "s4": "Pisos Industriales",
+        "s5": "Obra Civil y Mampostería",
+        "s6": "Proyectos Llave en Mano",
+        "s7": "Movimiento de Suelo"
+      }
+    },
+    "aboutSection": {
+      "eyebrow": "Sobre NyG Estructuras",
+      "title": "25 años construyendo en Argentina",
+      "description": "Somos una empresa argentina con 25 años de experiencia desarrollando proyectos industriales, logísticos y comerciales. Nos especializamos en estructuras metálicas, obra civil y soluciones llave en mano, acompañando a cada cliente desde la idea inicial hasta la entrega final.",
+      "cta": "CONOCÉ NUESTRA EMPRESA",
+      "mission": {
+        "title": "Misión",
+        "description": "Construir soluciones que impulsen a nuestros clientes."
+      },
+      "vision": {
+        "title": "Visión",
+        "description": "Ser la empresa referente en construcción industrial del país."
+      },
+      "values": {
+        "title": "Valores",
+        "description": "Compromiso, calidad, seguridad, responsabilidad, trabajo en equipo, innovación y transparencia."
+      },
+      "sustainability": {
+        "title": "Construcción Sustentable",
+        "description": "Comprometidos con el medio ambiente, optimizando recursos y construyendo un futuro mejor.",
+        "cta": "CONOCÉ MÁS",
+        "features": {
+          "materials": "Uso eficiente de materiales",
+          "waste": "Reducción de residuos",
+          "energy": "Eficiencia energética"
+        }
+      }
     },
     "equipo": {
       "title": "LA TECNOLOGÍA Y EL TALENTO HUMANO HACEN LA DIFERENCIA",
@@ -167,7 +242,7 @@
   },
   "Forex": {
     "hero": {
-      "badge": "Badge",
+      "badge": "Distintivo",
       "title": "Título",
       "description": "Descripción.",
       "primaryAction": "Acción principal"
@@ -200,7 +275,7 @@
     "BAD_REQUEST": "La solicitud no es válida.",
     "VALIDATION_ERROR": "Revisa los datos ingresados.",
     "UNAUTHORIZED": "Necesitas iniciar sesión.",
-    "FORBIDDEN": "No tienes permiso para esta acción.",
+    "FORBIDDEN": "No tienes permiso para realizar esta acción.",
     "NOT_FOUND": "El recurso no existe.",
     "CONFLICT": "El recurso ya existe o está en conflicto.",
     "RATE_LIMITED": "Demasiadas solicitudes. Intenta más tarde.",
@@ -208,5 +283,284 @@
     "TIMEOUT": "El servidor tardó demasiado en responder.",
     "SERVICE_UNAVAILABLE": "El servicio no está disponible.",
     "UPSTREAM_ERROR": "El servicio externo respondió con un error."
+  },
+  "Quotes": {
+    "hero": {
+      "badge": "COTIZACIONES",
+      "title": "Contanos qué necesitás construir",
+      "description": "Completá el formulario y nuestro equipo analiza tu proyecto para enviarte una propuesta a medida."
+    },
+    "steps": {
+      "type": "Tipo de obra",
+      "details": "Tu proyecto",
+      "context": "Ubicación y plazos",
+      "contact": "Contacto",
+      "summary": "Resumen"
+    },
+    "progress": "Paso {current} de {total}: {step}",
+    "nav": {
+      "back": "Volver",
+      "next": "Continuar",
+      "restart": "Empezar de nuevo"
+    },
+    "selector": {
+      "title": "¿Qué necesitás construir?",
+      "description": "Elegí una opción. Te explicamos qué incluye antes de continuar.",
+      "ideal": "Ideal para",
+      "detail": "Ver detalle",
+      "hideDetail": "Ocultar detalle"
+    },
+    "categories": {
+      "tinglado": {
+        "name": "Tinglado",
+        "short": "Estructura metálica con columnas y cubierta de chapa. Generalmente abierta en sus laterales.",
+        "full": "Estructura metálica compuesta por columnas, estructura de cubierta y techo de chapa. Generalmente es abierta en sus laterales.",
+        "ideal": "Depósitos abiertos, estacionamientos, áreas de carga, protección de maquinaria o espacios productivos."
+      },
+      "galpon": {
+        "name": "Galpón industrial",
+        "short": "Construcción cubierta y cerrada con chapa y/o mampostería.",
+        "full": "Construcción metálica cubierta y cerrada lateralmente con chapa y/o mampostería. Puede incorporar piso industrial, portones, aislación y otros complementos.",
+        "ideal": "Depósitos, fábricas, talleres y centros de distribución."
+      },
+      "nave": {
+        "name": "Nave industrial",
+        "short": "Edificio industrial integral según la actividad.",
+        "full": "Edificio industrial diseñado de manera integral según la actividad que se desarrollará en su interior. Puede incluir estructura, cerramientos, piso, instalaciones, oficinas, docks y sectores operativos.",
+        "ideal": "Plantas productivas, logística y proyectos industriales de mayor complejidad."
+      },
+      "estructura": {
+        "name": "Estructura metálica",
+        "short": "Fabricación y/o montaje de la estructura resistente.",
+        "full": "Fabricación y/o montaje de la estructura resistente del proyecto, sin que necesariamente incluya cubierta, cerramientos u obra civil.",
+        "ideal": "Cuando solo necesitás la estructura."
+      },
+      "ampliacion": {
+        "name": "Ampliación de galpón",
+        "short": "Extensión de una construcción existente.",
+        "full": "Extensión de una construcción existente para aumentar superficie cubierta, altura o capacidad operativa. Te vamos a pedir medidas y, si existen, planos de la estructura actual.",
+        "ideal": "Sumar superficie cubierta, altura o capacidad operativa."
+      },
+      "piso": {
+        "name": "Piso industrial",
+        "short": "Piso de hormigón para tránsito y operación industrial.",
+        "full": "Ejecución de piso de hormigón preparado para tránsito, almacenamiento o actividad industrial, con terminación según el proyecto.",
+        "ideal": "Plantas, depósitos y centros logísticos."
+      },
+      "movimiento": {
+        "name": "Movimiento de suelo",
+        "short": "Preparación y nivelación del terreno antes de la obra.",
+        "full": "Preparación, nivelación, excavación, relleno y compactación del terreno antes de ejecutar la obra.",
+        "ideal": "Preparar el predio para pisos, fundaciones, playas o nuevas construcciones."
+      },
+      "obraCivil": {
+        "name": "Obra civil / mampostería",
+        "short": "Fundaciones, bases, muros y trabajos civiles.",
+        "full": "Ejecución de fundaciones, bases, muros, mampostería y otros trabajos civiles asociados al proyecto.",
+        "ideal": "Completar las partidas civiles del proyecto."
+      },
+      "llaveEnMano": {
+        "name": "Proyecto llave en mano",
+        "short": "Solución integral coordinada por NyG en todas las etapas.",
+        "full": "Solución integral donde NyG Estructuras coordina las distintas etapas contratadas del proyecto hasta su entrega.",
+        "ideal": "Quien busca un único responsable."
+      },
+      "otro": {
+        "name": "Otro proyecto",
+        "short": "Ampliaciones, reformas o trabajos especiales.",
+        "full": "Para ampliaciones, reformas o trabajos especiales que no encajen en las categorías anteriores.",
+        "ideal": "Contanos brevemente qué necesitás."
+      }
+    },
+    "confirm": {
+      "selected": "Seleccionaste: {category}",
+      "question": "¿Es esto lo que necesitás?",
+      "yes": "Sí, continuar",
+      "change": "Cambiar tipo de construcción"
+    },
+    "details": {
+      "title": "Contanos sobre tu proyecto",
+      "description": "Son datos aproximados: nos sirven para dimensionar la propuesta.",
+      "areaHint": "La superficie se calcula sola con el ancho y el largo."
+    },
+    "context": {
+      "title": "¿Dónde es la obra?",
+      "description": "Con la ubicación y los plazos podemos estimar logística y disponibilidad."
+    },
+    "contact": {
+      "title": "¿Cómo te contactamos?",
+      "description": "Último paso: dejanos tus datos y te respondemos a la brevedad.",
+      "privacy": "Tus datos están protegidos. No compartimos tu información con terceros."
+    },
+    "summary": {
+      "title": "Revisá tu solicitud antes de enviar",
+      "description": "Si algo no quedó bien, podés volver a cualquier paso y corregirlo.",
+      "category": "Tipo de obra",
+      "location": "Ubicación",
+      "edit": "Editar",
+      "submit": "Solicitar cotización",
+      "empty": "Sin especificar",
+      "attachments": "¿Tenés planos, croquis o fotos? Podés adjuntarlos en el chat de WhatsApp."
+    },
+    "success": {
+      "title": "Recibimos tu proyecto",
+      "id": "Solicitud: {id}",
+      "description": "Revisá que el mensaje esté completo y enviánoslo por WhatsApp para que el equipo lo tome.",
+      "whatsapp": "Continuar por WhatsApp",
+      "whatsappNote": "Te preparamos un mensaje con el ID, el tipo de obra, la superficie y la localidad.",
+      "restart": "Cargar otra solicitud",
+      "pdf": "Descargar PDF",
+      "pdfError": "No pudimos generar el PDF. Probá de nuevo."
+    },
+    "fields": {
+      "width": "Ancho aproximado",
+      "length": "Largo aproximado",
+      "height": "Altura",
+      "area": "Superficie",
+      "usage": "Uso previsto",
+      "roofType": "Tipo de cubierta",
+      "insulation": "¿Necesitás aislación?",
+      "industrialFloor": "¿Necesitás piso industrial?",
+      "enclosures": "Cerramientos",
+      "masonry": "¿Incluye mampostería?",
+      "gates": "Portones (cantidad y tipo)",
+      "officesBathrooms": "¿Necesitás oficinas o baños?",
+      "docks": "¿Necesitás docks de carga?",
+      "installations": "Instalaciones requeridas",
+      "purpose": "Destino de la estructura",
+      "hasPlans": "¿Tenés planos o proyecto?",
+      "structureType": "Tipo de estructura (si lo conocés)",
+      "scope": "¿Fabricación, montaje o ambos?",
+      "currentMeasures": "Medidas actuales (ancho × largo × altura)",
+      "operationalContinuity": "¿La planta sigue operativa durante la obra?",
+      "interferences": "Interferencias a tener en cuenta",
+      "loads": "Cargas o tránsito previsto",
+      "landCondition": "Estado del terreno",
+      "finish": "Terminación",
+      "newOrExisting": "¿Obra nueva o sobre piso existente?",
+      "objective": "Objetivo del movimiento de suelo",
+      "earthwork": "¿Relleno o excavación?",
+      "slopes": "Desniveles aproximados",
+      "equipmentAccess": "¿Hay acceso para equipos?",
+      "currentState": "Estado actual del terreno",
+      "workItems": "Partidas requeridas",
+      "quantities": "Cantidades aproximadas",
+      "siteStatus": "Estado de la obra",
+      "turnkeyScope": "¿Qué etapas querés que coordine NyG?",
+      "description": "Contanos qué necesitás",
+      "province": "Provincia",
+      "city": "Localidad",
+      "landAvailable": "¿Ya contás con el terreno?",
+      "stage": "Etapa del proyecto",
+      "startDate": "¿Cuándo te gustaría comenzar?",
+      "deadline": "Fecha límite (opcional)",
+      "name": "Nombre y apellido",
+      "company": "Empresa (opcional)",
+      "whatsapp": "Teléfono / WhatsApp",
+      "email": "Email",
+      "preferredTime": "Horario preferido de contacto"
+    },
+    "placeholder": {
+      "select": "Seleccioná una opción"
+    },
+    "options": {
+      "yesNoTbd": {
+        "yes": "Sí",
+        "no": "No",
+        "tbd": "A definir"
+      },
+      "yesNoProgress": {
+        "yes": "Sí",
+        "no": "No",
+        "progress": "En proceso"
+      },
+      "roof": {
+        "sheet": "Chapa",
+        "insulated": "Chapa aislada",
+        "tbd": "A definir"
+      },
+      "enclosure": {
+        "sheet": "Chapa",
+        "masonry": "Mampostería",
+        "mixed": "Mixto",
+        "tbd": "A definir"
+      },
+      "scope": {
+        "fabrication": "Solo fabricación",
+        "assembly": "Solo montaje",
+        "both": "Fabricación y montaje",
+        "tbd": "A definir"
+      },
+      "land": {
+        "ready": "Preparado",
+        "leveling": "Hay que nivelarlo",
+        "raw": "Sin preparar",
+        "tbd": "A definir"
+      },
+      "newExisting": {
+        "new": "Obra nueva",
+        "existing": "Sobre piso existente",
+        "tbd": "A definir"
+      },
+      "earthwork": {
+        "fill": "Relleno",
+        "excavation": "Excavación",
+        "both": "Ambos",
+        "tbd": "A definir"
+      },
+      "siteStatus": {
+        "notStarted": "Sin iniciar",
+        "inProgress": "En ejecución",
+        "tbd": "A definir"
+      },
+      "stage": {
+        "idea": "Idea inicial",
+        "preliminary": "Anteproyecto",
+        "defined": "Proyecto definido",
+        "ready": "Listo para ejecutar"
+      },
+      "start": {
+        "asap": "Lo antes posible",
+        "months1to3": "1 a 3 meses",
+        "months3to6": "3 a 6 meses",
+        "later": "Más de 6 meses"
+      },
+      "contactTime": {
+        "morning": "Mañana",
+        "afternoon": "Tarde",
+        "any": "Indistinto"
+      },
+      "turnkey": {
+        "project": "Proyecto",
+        "soil": "Movimiento de suelo",
+        "foundations": "Bases y fundaciones",
+        "structure": "Estructura",
+        "roof": "Cubierta",
+        "enclosures": "Cerramientos",
+        "floor": "Piso industrial",
+        "masonry": "Mampostería",
+        "installations": "Instalaciones",
+        "extras": "Complementos"
+      }
+    },
+    "validation": {
+      "required": "Completá este dato.",
+      "email": "Revisá el email.",
+      "phone": "Revisá el teléfono.",
+      "number": "Ingresá un número mayor a cero.",
+      "summary": "Revisá los campos marcados."
+    },
+    "whatsapp": {
+      "intro": "Hola NyG Estructuras, quiero cotizar un proyecto.",
+      "outro": "Quedo atento. ¡Gracias!"
+    },
+    "pdf": {
+      "brand": "NyG ESTRUCTURAS",
+      "title": "Solicitud de cotización",
+      "date": "Fecha: {date}",
+      "page": "Página {current} de {total}",
+      "footer": "Documento generado desde el formulario de cotización del sitio.",
+      "filename": "solicitud"
+    }
   }
 }

@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { m } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
@@ -17,101 +18,151 @@ export interface ObrasGalleryProps {
   slideLabels?: readonly string[];
 }
 
-const ARROW_CLASS =
-  "flex size-9 shrink-0 items-center justify-center rounded-full bg-graphite text-white transition-colors hover:bg-graphite/80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none disabled:pointer-events-none disabled:opacity-30 lg:disabled:opacity-100";
+const AUTOPLAY_MS = 6000;
+const SLIDE_DURATION_S = 0.5;
+
+function cardsForWidth(width: number): number {
+  if (width < 640) return 1;
+  if (width < 1024) return 2;
+  return 2; // Mostramos 2 tarjetas en desktop para que sean más grandes (antes eran muchas o muy angostas).
+}
 
 /**
- * Galería de obras: fila continua con flechas circulares a los lados. Con espacio
- * suficiente (`lg`) entran las 4 tarjetas y las flechas quedan deshabilitadas; en
- * pantallas chicas la fila se desplaza (swipe o flechas).
+ * Galería de obras: usa la misma lógica de bucle infinito que el carrusel de servicios.
  */
 export function ObrasGallery({ projects, labelledBy, previousLabel, nextLabel, slideLabels = [] }: ObrasGalleryProps) {
-  const listRef = useRef<HTMLUListElement>(null);
-  const [canPrev, setCanPrev] = useState(false);
-  const [canNext, setCanNext] = useState(false);
-  const [active, setActive] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [cardsPerView, setCardsPerView] = useState(2);
+  const [isJumping, setIsJumping] = useState(false);
 
-  const syncArrows = useCallback(() => {
-    const list = listRef.current;
-    if (!list) return;
-    setCanPrev(list.scrollLeft > 1);
-    setCanNext(list.scrollLeft + list.clientWidth < list.scrollWidth - 1);
-    const items = Array.from(list.children) as HTMLElement[];
-    const offset = (item: HTMLElement) => Math.abs(item.offsetLeft - list.offsetLeft - list.scrollLeft);
-    setActive(items.reduce((best, item, i) => (offset(item) < offset(items[best]!) ? i : best), 0));
-  }, []);
+  const jumpFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
-    syncArrows();
-    window.addEventListener("resize", syncArrows);
-    return () => window.removeEventListener("resize", syncArrows);
-  }, [syncArrows]);
+    const update = () => setCardsPerView(cardsForWidth(window.innerWidth));
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
-  const scrollByCard = (direction: 1 | -1) => {
-    const list = listRef.current;
-    const first = list?.firstElementChild as HTMLElement | null;
-    if (!list || !first) return;
-    list.scrollBy({ left: direction * (first.offsetWidth + 12), behavior: "smooth" });
-  };
+  const total = projects.length;
+  // Dos copias: la segunda cubre el tramo final mientras se reposiciona el track
+  const loop = [...projects, ...projects];
 
-  const goTo = (index: number) =>
-    listRef.current?.children[index]?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+  const goNext = useCallback(() => {
+    setIsJumping(false);
+    setIndex((current) => current + 1);
+  }, []);
+
+  const goPrev = useCallback(() => {
+    setIsJumping(false);
+    setIndex((current) => {
+      if (current <= 0) return total - 1;
+      return current - 1;
+    });
+  }, [total]);
+
+  const handleAnimationComplete = useCallback(() => {
+    if (index < total) return;
+    setIsJumping(true);
+    setIndex((current) => current - total);
+  }, [index, total]);
+
+  useEffect(() => {
+    if (!isJumping) return;
+    jumpFrameRef.current = requestAnimationFrame(() => {
+      jumpFrameRef.current = null;
+      setIsJumping(false);
+    });
+    return () => {
+      if (jumpFrameRef.current !== null) cancelAnimationFrame(jumpFrameRef.current);
+    };
+  }, [isJumping]);
+
+  useEffect(() => {
+    if (isPaused || total <= cardsPerView) return;
+    const timer = setInterval(goNext, AUTOPLAY_MS);
+    return () => clearInterval(timer);
+  }, [isPaused, total, cardsPerView, goNext]);
+
+  const stepPercent = 100 / loop.length;
+  const activeDot = ((index % total) + total) % total;
 
   return (
-    <div className="relative flex w-full flex-col">
-      <div className="flex items-center gap-2">
-        <button
-          type="button"
-          onClick={() => scrollByCard(-1)}
-          disabled={!canPrev}
-          className={cn(ARROW_CLASS, "self-center")}
+    <div
+      className="relative w-full"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      role="region"
+      aria-labelledby={labelledBy}
+    >
+      <div className="overflow-hidden px-1 py-4">
+        <m.div
+          className="flex items-stretch"
+          style={{ width: `${(loop.length / cardsPerView) * 100}%` }}
+          animate={{ x: `-${index * stepPercent}%` }}
+          transition={isJumping ? { duration: 0 } : { duration: SLIDE_DURATION_S, ease: "easeInOut" }}
+          onAnimationComplete={handleAnimationComplete}
         >
-          <ChevronLeft aria-hidden />
-          <span className="sr-only">{previousLabel}</span>
-        </button>
-
-        <ul
-          ref={listRef}
-          role="region"
-          aria-labelledby={labelledBy}
-          tabIndex={0}
-          onScroll={syncArrows}
-          className="flex min-w-0 flex-1 items-stretch snap-x snap-mandatory gap-3 overflow-x-auto [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none lg:overflow-hidden [&::-webkit-scrollbar]:hidden"
-        >
-          {projects.map((project, i) => (
-            <li key={i} className="flex w-[60%] shrink-0 snap-start sm:w-[30%] lg:w-auto lg:min-w-0 lg:flex-1">
+          {loop.map((project, position) => (
+            <div
+              key={`${project.name}-${position}`}
+              aria-hidden={position >= total}
+              className="px-2 shrink-0 flex"
+              style={{ width: `${stepPercent}%` }}
+            >
               <ProjectCard {...project} />
-            </li>
+            </div>
           ))}
-        </ul>
-
-        <button
-          type="button"
-          onClick={() => scrollByCard(1)}
-          disabled={!canNext}
-          className={cn(ARROW_CLASS, "self-center")}
-        >
-          <ChevronRight aria-hidden />
-          <span className="sr-only">{nextLabel}</span>
-        </button>
+        </m.div>
       </div>
 
-      <div className="relative z-0 mt-6 flex h-auto min-h-0 w-full items-center justify-center gap-2 py-2">
-        {slideLabels?.map((label, i) => (
+      {total > cardsPerView && (
+        <>
           <button
-            key={label}
             type="button"
-            onClick={() => goTo(i)}
-            aria-current={i === active ? "true" : undefined}
-            className={cn(
-              "size-2.5 shrink-0 rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-[#F04400] focus-visible:ring-offset-2 focus-visible:outline-none",
-              i === active ? "bg-[#F04400]" : "bg-gray-300 hover:bg-gray-400",
-            )}
+            onClick={goPrev}
+            className="absolute -left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-gray-200 bg-white p-2 text-gray-800 shadow-md transition-colors hover:bg-[#F04400] hover:text-white hover:border-[#F04400] focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
-            <span className="sr-only">{label}</span>
+            <ChevronLeft aria-hidden className="h-5 w-5" />
+            <span className="sr-only">{previousLabel}</span>
           </button>
-        ))}
-      </div>
+          <button
+            type="button"
+            onClick={goNext}
+            className="absolute -right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-gray-200 bg-white p-2 text-gray-800 shadow-md transition-colors hover:bg-[#F04400] hover:text-white hover:border-[#F04400] focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          >
+            <ChevronRight aria-hidden className="h-5 w-5" />
+            <span className="sr-only">{nextLabel}</span>
+          </button>
+        </>
+      )}
+
+      {total > cardsPerView && slideLabels && (
+        <div className="mt-4 flex items-center justify-center gap-2">
+          {slideLabels.map((label, i) => (
+            <button
+              key={label}
+              type="button"
+              onClick={() => {
+                setIsJumping(false);
+                setIndex(i);
+              }}
+              aria-current={i === activeDot ? "true" : undefined}
+              className="p-1"
+            >
+              <span
+                aria-hidden
+                className={cn(
+                  "block size-2.5 rounded-full transition-all duration-300",
+                  i === activeDot ? "bg-[#F04400] scale-125" : "bg-gray-300 hover:bg-gray-400",
+                )}
+              />
+              <span className="sr-only">{label}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

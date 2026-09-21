@@ -3,14 +3,20 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { ServicesCarousel } from "@/presentation/molecules/main/services/ServicesCarousel";
 
+interface ServicesSectionProps {
+  /** Ancla de la sección; también genera el id del título para `aria-labelledby`. */
+  id?: string;
+}
+
 /**
  * ServicesSection Organism
  * Representa la sección completa de "Nuestros Servicios".
  * Incluye la cabecera (título, texto, botón) y un carrusel
  * con las tarjetas de servicios que avanza automáticamente.
  */
-export function ServicesSection() {
+export function ServicesSection({ id = "servicios" }: ServicesSectionProps) {
   const t = useTranslations("Home.servicesSection");
+  const titleId = `${id}-title`;
   // Mismas claves de navegación que usa ObrasSection: son genéricas de carrusel.
   const tCarousel = useTranslations("Home.heroCarousel");
 
@@ -26,9 +32,9 @@ export function ServicesSection() {
   ];
 
   return (
-    <section className="w-full py-12 md:py-20 overflow-hidden">
+    <section id={id} aria-labelledby={titleId} className="w-full py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        
+
         {/* Cabecera de la sección */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="max-w-2xl space-y-4">
@@ -39,9 +45,12 @@ export function ServicesSection() {
               </h2>
               <div className="h-[2px] w-12 bg-brand-orange" />
             </div>
-            
+
             {/* Título principal */}
-            <h3 className="text-3xl md:text-4xl font-extrabold text-graphite uppercase leading-tight">
+            <h3
+              id={titleId}
+              className="text-3xl md:text-4xl font-extrabold text-graphite uppercase leading-tight"
+            >
               {t("title.line1")}<br className="hidden md:block" /> {t("title.line2")}
             </h3>
           </div>

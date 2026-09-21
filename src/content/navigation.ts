@@ -46,6 +46,6 @@ export const HEADER_NAV = [
   { href: "/#obras", labelKey: "projects", hasDropdown: false },
   { href: ROUTES.quotes, labelKey: "quotes", hasDropdown: false },
   { href: "/#sustentabilidad", labelKey: "sustainability", hasDropdown: false },
-  { href: "/#faq", labelKey: "faq", hasDropdown: false },
+  //{ href: "/#faq", labelKey: "faq", hasDropdown: false },
   { href: "/#contacto", labelKey: "contact", hasDropdown: false },
 ] as const satisfies readonly HeaderNavItemConfig[];

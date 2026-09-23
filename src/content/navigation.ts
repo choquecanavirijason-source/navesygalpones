@@ -44,6 +44,7 @@ export const HEADER_NAV = [
   { href: "/#nosotros", labelKey: "about", hasDropdown: false },
   { href: "/#servicios", labelKey: "services", hasDropdown: true },
   { href: "/#obras", labelKey: "projects", hasDropdown: false },
+  { href: ROUTES.proyectos, labelKey: "catalog", hasDropdown: false },
   { href: ROUTES.quotes, labelKey: "quotes", hasDropdown: false },
   { href: "/#sustentabilidad", labelKey: "sustainability", hasDropdown: false },
   //{ href: "/#faq", labelKey: "faq", hasDropdown: false },

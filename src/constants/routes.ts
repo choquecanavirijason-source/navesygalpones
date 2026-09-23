@@ -2,6 +2,7 @@
 export const ROUTES = {
   home: "/",
   quotes: "/cotizaciones",
+  proyectos: "/proyectos",
   forex: "/markets/forex",
   privacy: "/company/privacy",
   terms: "/company/terms",
@@ -13,6 +14,7 @@ export type AppRoute = (typeof ROUTES)[keyof typeof ROUTES];
 export const SITEMAP_ROUTES = [
   ROUTES.home,
   ROUTES.quotes,
+  ROUTES.proyectos,
   ROUTES.forex,
   ROUTES.privacy,
   ROUTES.terms,

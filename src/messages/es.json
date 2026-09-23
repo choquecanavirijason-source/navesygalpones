@@ -20,6 +20,10 @@
     "terms": {
       "title": "Términos",
       "description": "Descripción de la página de términos."
+    },
+    "proyectos": {
+      "title": "Proyectos",
+      "description": "Catálogo de obras realizadas por NyG Estructuras."
     }
   },
   "Navigation": {
@@ -46,6 +50,7 @@
       "about": "Nosotros",
       "services": "Servicios",
       "projects": "Obras",
+      "catalog": "Proyectos",
       "quotes": "Cotizaciones",
       "sustainability": "Sustentabilidad",
       "faq": "Preguntas frecuentes",
@@ -241,6 +246,54 @@
       },
       "tagline": "UN PAÍS EN CONSTANTE CRECIMIENTO. NOSOTROS TAMBIÉN."
     }
+  },
+  "Proyectos": {
+    "hero": {
+      "badgeTemplate": "Obra Destacada {current} / {total}",
+      "cta": "Explorar Ficha Técnica",
+      "previous": "Proyecto anterior",
+      "next": "Proyecto siguiente"
+    },
+    "grid": {
+      "badge": "Catálogo Completo",
+      "title": "Obras Recientes",
+      "cta": "Ver Ficha Técnica"
+    },
+    "modal": {
+      "tag": "Ficha Técnica",
+      "close": "Cerrar",
+      "specs": {
+        "surface": "Superficie",
+        "location": "Ubicación",
+        "structure": "Estructura",
+        "timeline": "Plazo de ejecución"
+      },
+      "photoCounter": "Foto {current} / {total}",
+      "previousPhoto": "Foto anterior",
+      "nextPhoto": "Foto siguiente"
+    },
+    "items": [
+      {
+        "structure": "Estructura metálica",
+        "timeline": "A definir con el cliente",
+        "description": "Estructura metálica pensada para logística de alto tránsito, con luces amplias para maximizar el espacio de maniobra y almacenamiento."
+      },
+      {
+        "structure": "Estructura metálica",
+        "timeline": "A definir con el cliente",
+        "description": "Nave industrial diseñada para optimizar el flujo productivo, con estructura metálica resistente y terminaciones pensadas para uso intensivo."
+      },
+      {
+        "structure": "Estructura metálica",
+        "timeline": "A definir con el cliente",
+        "description": "Depósito con estructura metálica y pisos industriales, pensado para almacenamiento comercial con fácil acceso para carga y descarga."
+      },
+      {
+        "structure": "Estructura metálica",
+        "timeline": "A definir con el cliente",
+        "description": "Galpón agroindustrial con estructura metálica adaptada a las exigencias del sector, priorizando ventilación y durabilidad."
+      }
+    ]
   },
   "Forex": {
     "hero": {

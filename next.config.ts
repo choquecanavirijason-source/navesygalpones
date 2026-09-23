@@ -28,7 +28,11 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
-    remotePatterns: [],
+    remotePatterns: [
+      // TODO: solo para las fotos de stock de `/proyectos` mientras no hay más fotos reales por
+      // obra (ver `content/proyectos.ts`). Sacar este dominio en cuanto se reemplacen.
+      { protocol: "https", hostname: "images.unsplash.com" },
+    ],
     // Sin servidor no hay endpoint que optimice: las imágenes se sirven tal cual están en `public/`.
     unoptimized: isStaticExport,
   },

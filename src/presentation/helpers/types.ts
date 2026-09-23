@@ -13,3 +13,16 @@ export interface ActionLink {
   href: string;
   label: string;
 }
+
+/** Obra del catálogo `/proyectos`, ya traducida y con sus imágenes resueltas. */
+export interface ProyectoItem {
+  id: string;
+  name: string;
+  location: string;
+  size: string;
+  structure: string;
+  timeline: string;
+  description: string;
+  /** Fotos de la obra; hoy solo hay una por obra (ver TODO en ProyectosPage). */
+  images: readonly string[];
+}

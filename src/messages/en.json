@@ -20,6 +20,10 @@
     "terms": {
       "title": "Terms",
       "description": "Terms page description."
+    },
+    "proyectos": {
+      "title": "Projects",
+      "description": "Catalog of projects completed by NyG Estructuras."
     }
   },
   "Navigation": {
@@ -46,6 +50,7 @@
       "about": "About Us",
       "services": "Services",
       "projects": "Projects",
+      "catalog": "Portfolio",
       "quotes": "Quotes",
       "sustainability": "Sustainability",
       "faq": "FAQ",
@@ -241,6 +246,54 @@
       },
       "tagline": "A COUNTRY IN CONSTANT GROWTH. SO ARE WE."
     }
+  },
+  "Proyectos": {
+    "hero": {
+      "badgeTemplate": "Featured Project {current} / {total}",
+      "cta": "View Technical Sheet",
+      "previous": "Previous project",
+      "next": "Next project"
+    },
+    "grid": {
+      "badge": "Full Catalog",
+      "title": "Recent Projects",
+      "cta": "View Technical Sheet"
+    },
+    "modal": {
+      "tag": "Technical Sheet",
+      "close": "Close",
+      "specs": {
+        "surface": "Surface area",
+        "location": "Location",
+        "structure": "Structure",
+        "timeline": "Execution timeline"
+      },
+      "photoCounter": "Photo {current} / {total}",
+      "previousPhoto": "Previous photo",
+      "nextPhoto": "Next photo"
+    },
+    "items": [
+      {
+        "structure": "Steel structure",
+        "timeline": "To be defined with the client",
+        "description": "Steel structure built for high-traffic logistics, with wide spans that maximize maneuvering and storage space."
+      },
+      {
+        "structure": "Steel structure",
+        "timeline": "To be defined with the client",
+        "description": "Industrial building designed to optimize production flow, with a resistant steel structure and finishes suited for intensive use."
+      },
+      {
+        "structure": "Steel structure",
+        "timeline": "To be defined with the client",
+        "description": "Warehouse with steel structure and industrial flooring, designed for commercial storage with easy loading and unloading access."
+      },
+      {
+        "structure": "Steel structure",
+        "timeline": "To be defined with the client",
+        "description": "Agro-industrial shed with steel structure adapted to the sector's demands, prioritizing ventilation and durability."
+      }
+    ]
   },
   "Forex": {
     "hero": {

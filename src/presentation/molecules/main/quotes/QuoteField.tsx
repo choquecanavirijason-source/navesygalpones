@@ -57,7 +57,7 @@ export function QuoteField({
   } as const;
 
   return (
-    <div className={cn("flex flex-col gap-1.5", field.wide && "sm:col-span-2")}>
+    <div className={cn("flex flex-col gap-1.5", field.wide && "sm:col-span-2 xl:col-span-3")}>
       <label
         htmlFor={field.type === "checkboxes" ? undefined : id}
         id={field.type === "checkboxes" ? `${id}-label` : undefined}

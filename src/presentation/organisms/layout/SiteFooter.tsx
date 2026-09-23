@@ -15,7 +15,14 @@ export function SiteFooter() {
   const year = String(new Date().getFullYear());
 
   return (
-    <footer className="border-t border-border/60">
+    /*
+     * Grafito, el mismo tono con el que cierra la sección de contacto.
+     *
+     * La clase `dark` reapunta los tokens semánticos (`foreground`, `muted-foreground`,
+     * `border`) solo dentro del footer: así los enlaces legales y el copyright se leen sobre
+     * el fondo oscuro sin tener que pasarles colores sueltos ni tocar los átomos compartidos.
+     */
+    <footer className="dark border-t border-border/60 bg-graphite text-foreground">
       <Container className="flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
         <Logo name={siteName} size="sm" />
         <NavList items={items} ariaLabel={tNav("legalNavLabel")} />

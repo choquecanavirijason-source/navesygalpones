@@ -46,23 +46,27 @@ export function QuoteCategoryCard({
         selected ? "border-brand-orange ring-1 ring-brand-orange" : "border-gray-200 hover:border-brand-orange/60",
       )}
     >
+      {/*
+        Solo nombre + frase corta a la vista: es el criterio UX del documento funcional y,
+        de paso, permite ver las diez opciones sin scrollear. El "ideal para" y la
+        explicación completa viven en el desplegable.
+      */}
       <button
         type="button"
         onClick={onSelect}
         aria-pressed={selected}
-        className="flex flex-1 flex-col gap-2 p-4 text-left focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:outline-none"
+        className="flex flex-1 flex-col gap-1.5 p-3 text-left focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:outline-none"
       >
-        <span className="flex items-center gap-2">
-          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-brand-orange/10 text-xs font-bold text-brand-orange">
+        <span className="flex items-center gap-1.5">
+          <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-orange/10 text-[11px] font-bold text-brand-orange">
             {index}
           </span>
-          <Icon aria-hidden className="size-5 shrink-0 text-brand-orange" />
-          <span className="text-sm font-extrabold tracking-tight text-graphite uppercase">{name}</span>
+          <Icon aria-hidden className="size-4 shrink-0 text-brand-orange" />
+          <span className="text-[13px] leading-tight font-extrabold tracking-tight text-graphite uppercase">
+            {name}
+          </span>
         </span>
-        <span className="text-xs leading-relaxed text-gray-600">{short}</span>
-        <span className="mt-auto pt-2 text-[11px] leading-snug font-semibold text-gray-500">
-          {idealLabel}: {ideal}
-        </span>
+        <span className="text-xs leading-snug text-gray-600">{short}</span>
       </button>
 
       <button
@@ -70,19 +74,22 @@ export function QuoteCategoryCard({
         onClick={onToggleDetail}
         aria-expanded={expanded}
         aria-controls={detailId}
-        className="flex items-center justify-between gap-2 border-t border-gray-100 px-4 py-2 text-[11px] font-bold tracking-wider text-brand-orange uppercase transition-colors hover:bg-brand-orange/5 focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:outline-none"
+        className="mt-auto flex items-center justify-between gap-2 border-t border-gray-100 px-3 py-1.5 text-[10px] font-bold tracking-wider text-brand-orange uppercase transition-colors hover:bg-brand-orange/5 focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:outline-none"
       >
         {detailLabel}
-        <ChevronDown aria-hidden className={cn("size-4 transition-transform", expanded && "rotate-180")} />
+        <ChevronDown aria-hidden className={cn("size-3.5 transition-transform", expanded && "rotate-180")} />
       </button>
 
-      <p
+      <div
         id={detailId}
         hidden={!expanded}
-        className="border-t border-gray-100 bg-gray-50 px-4 py-3 text-xs leading-relaxed text-gray-600"
+        className="border-t border-gray-100 bg-gray-50 px-3 py-2.5 text-xs leading-relaxed text-gray-600"
       >
-        {full}
-      </p>
+        <p>{full}</p>
+        <p className="mt-2 font-semibold text-gray-500">
+          {idealLabel}: {ideal}
+        </p>
+      </div>
     </li>
   );
 }

@@ -21,7 +21,11 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
     display: "standalone",
     background_color: THEME_COLORS.light,
     theme_color: THEME_COLORS.light,
-    // Agregar iconos en `public/favicon/` y declararlos aquí.
-    icons: [],
+    // El favicon y el de iOS salen por convención de archivo (`app/icon.svg`,
+    // `app/apple-icon.png`); estos dos son los que pide el manifest para instalar la app.
+    icons: [
+      { src: "/favicon/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/favicon/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+    ],
   };
 }

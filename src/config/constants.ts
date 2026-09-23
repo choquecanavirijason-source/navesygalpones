@@ -8,6 +8,7 @@ export const LOCAL_API_BASE_URL = "/api";
 /** Rutas de la API interna, relativas a `LOCAL_API_BASE_URL`. */
 export const LOCAL_API_ROUTES = {
   example: "/example",
+  contacto: "/contacto",
 } as const;
 
 /** Endpoints del backend externo, relativos a `API_BASE_URL`. Solo los usa `apiClient`. */

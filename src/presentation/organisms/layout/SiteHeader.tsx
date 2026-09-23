@@ -38,12 +38,26 @@ export function SiteHeader({ compact = false }: SiteHeaderProps) {
     <CollapsingHeader collapsible={!compact}>
       <SkipLink href={`#${MAIN_CONTENT_ID}`}>{t("skipToContent")}</SkipLink>
 
-      {/* Nivel 1 desktop: logo + contacto + CTA. En `compact` no se dibuja. */}
+      {/*
+        Isotipo a caballo de las dos filas: absoluto sobre todo el alto del header y centrado,
+        así cruza la línea que las separa. Va fuera del flujo de la barra superior para no
+        empujar nada, y desaparece al colapsar (ahí toma el relevo el isotipo chico del nav).
+      */}
+      {compact ? null : (
+        <div className="pointer-events-none absolute inset-0 z-10 hidden items-center group-data-[collapsed=true]/header:hidden md:flex">
+          {/* `flex`: el enlace del isotipo es `inline-flex` y en un bloque arrastraría el
+              hueco de la línea base, que lo dejaba unos píxeles por encima del centro. */}
+          <Container className="flex items-center">
+            <Logo name={siteName} size="lg" className="pointer-events-auto" />
+          </Container>
+        </div>
+      )}
+
+      {/* Nivel 1 desktop: contacto + CTA. En `compact` no se dibuja. */}
       {compact ? null : (
         <>
           <div className="hidden h-topbar items-center md:flex">
-            <Container className="flex items-center justify-between gap-4">
-              <Logo name={siteName} />
+            <Container className="flex items-center justify-end gap-4">
               <div className="flex items-center gap-6 text-base">
                 <TopbarItem icon={<MapPin aria-hidden className="size-5" />} className="hidden lg:inline-flex">
                   {tTopbar("coverageLabel")}

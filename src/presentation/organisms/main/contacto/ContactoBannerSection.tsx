@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { Reveal } from "@/presentation/atoms/common/Reveal";
 import { BenefitItem } from "@/presentation/atoms/main/contacto/BenefitItem";
-import { ContactoForm } from "@/presentation/molecules/main/contacto/ContactoForm";
+import { ContactoFormPanel } from "@/presentation/organisms/main/contacto/ContactoFormPanel";
 
 const BENEFITS = [
   { key: "fast", icon: Zap },
@@ -56,7 +56,7 @@ export function ContactoBannerSection({ id = "contacto" }: ContactoBannerSection
           delay={0.1}
           className="relative z-20 w-full max-w-[440px] shrink-0 self-center rounded-xl bg-white p-4 shadow-xl lg:my-10 lg:max-w-[400px] xl:max-w-[420px]"
         >
-          <ContactoForm
+          <ContactoFormPanel
             labels={{
               type: t("form.type"),
               typeOptions,
@@ -67,6 +67,7 @@ export function ContactoBannerSection({ id = "contacto" }: ContactoBannerSection
               phone: t("form.phone"),
               message: t("form.message"),
               submit: t("form.submit"),
+              sending: t("form.sending"),
             }}
           />
         </Reveal>

@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "siteName": "Nome do site",
+    "siteName": "Naves y Galpones",
     "home": {
       "title": "Início",
       "description": "Descrição da página inicial."
@@ -235,7 +235,9 @@
         "company": "Empresa (opcional)",
         "phone": "Telefone / WhatsApp",
         "message": "Conte-nos sobre seu projeto...",
-        "submit": "ENVIAR CONSULTA"
+        "submit": "ENVIAR CONSULTA",
+        "sending": "ENVIANDO…",
+        "success": "Obrigado! Recebemos sua consulta e entraremos em contato em breve."
       },
       "tagline": "UM PAÍS EM CONSTANTE CRESCIMENTO. NÓS TAMBÉM."
     }

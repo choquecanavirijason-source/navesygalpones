@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "siteName": "Site name",
+    "siteName": "Naves y Galpones",
     "home": {
       "title": "Home",
       "description": "Home page description."
@@ -60,8 +60,8 @@
       "badge": "INDUSTRIAL WAREHOUSES",
       "title": {
         "line1": "WE BUILD THE INFRASTRUCTURE",
-        "line2": "YOUR BUSINESS NEEDS",
-        "line3": ""
+        "line2": "YOUR BUSINESS",
+        "line3": "NEEDS"
       },
       "description": "Comprehensive solutions in steel structures, civil works, industrial flooring, and turnkey projects.",
       "ctaPrimary": "GET A QUOTE ON WHATSAPP",
@@ -235,7 +235,9 @@
         "company": "Company (optional)",
         "phone": "Phone / WhatsApp",
         "message": "Tell us about your project...",
-        "submit": "SEND INQUIRY"
+        "submit": "SEND INQUIRY",
+        "sending": "SENDING…",
+        "success": "Thanks! We received your enquiry and will get back to you shortly."
       },
       "tagline": "A COUNTRY IN CONSTANT GROWTH. SO ARE WE."
     }

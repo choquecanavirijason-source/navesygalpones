@@ -1,8 +1,9 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 
+import type { SendContactoInput } from "@/core/types/modules/contacto/contacto.types";
 import { cn } from "@/lib/utils";
 
 export interface ContactoFormLabels {
@@ -15,15 +16,44 @@ export interface ContactoFormLabels {
   phone: string;
   message: string;
   submit: string;
+  sending: string;
+}
+
+interface ContactoFormProps {
+  labels: ContactoFormLabels;
+  /**
+   * Envía la consulta y devuelve si salió bien. La molécula no conoce el transporte ni los
+   * mensajes de error: solo limpia los campos cuando el envío fue exitoso.
+   */
+  onSubmit: (values: SendContactoInput) => Promise<boolean>;
+  isSubmitting?: boolean;
 }
 
 const CONTROL_CLASS =
   "w-full rounded-md border border-gray-200 bg-white px-3 py-2 font-sans text-[13px] leading-normal font-medium tracking-normal text-gray-800 placeholder:font-normal placeholder:text-gray-400 focus:ring-1 focus:ring-[#F04400] focus:outline-none";
 
 /** Formulario de contacto compacto. Texto ya traducido por props. */
-export function ContactoForm({ labels }: { labels: ContactoFormLabels }) {
-  // TODO: conectar con backend (flujo /api-feature). Por ahora no envía datos.
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => event.preventDefault();
+export function ContactoForm({ labels, onSubmit, isSubmitting = false }: ContactoFormProps) {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Se guarda antes del `await`: después del despacho, `currentTarget` queda en null.
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const field = (name: string) => String(data.get(name) ?? "").trim();
+
+    const sent = await onSubmit({
+      type: field("type"),
+      area: field("area"),
+      name: field("name"),
+      city: field("city"),
+      company: field("company"),
+      phone: field("phone"),
+      message: field("message"),
+      website: field("website"),
+    });
+
+    if (sent) form.reset();
+  };
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -53,12 +83,23 @@ export function ContactoForm({ labels }: { labels: ContactoFormLabels }) {
       <label className="sr-only" htmlFor="contacto-message">{labels.message}</label>
       <textarea id="contacto-message" name="message" rows={2} placeholder={labels.message} className={cn(CONTROL_CLASS, "resize-none sm:col-span-2")} />
 
+      {/* Campo trampa: invisible para una persona, irresistible para un bot que rellena todo. */}
+      <div aria-hidden className="hidden">
+        <label htmlFor="contacto-website">Website</label>
+        <input id="contacto-website" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <button
         type="submit"
-        className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#F04400] py-2.5 text-xs font-bold tracking-wider text-white uppercase transition-colors hover:bg-[#d03a00] focus-visible:ring-2 focus-visible:ring-[#F04400] focus-visible:ring-offset-2 focus-visible:outline-none sm:col-span-2"
+        disabled={isSubmitting}
+        className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#F04400] py-2.5 text-xs font-bold tracking-wider text-white uppercase transition-colors hover:bg-[#d03a00] focus-visible:ring-2 focus-visible:ring-[#F04400] focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-wait disabled:opacity-70 sm:col-span-2"
       >
-        {labels.submit}
-        <ArrowRight aria-hidden className="size-3.5" />
+        {isSubmitting ? labels.sending : labels.submit}
+        {isSubmitting ? (
+          <Loader2 aria-hidden className="size-3.5 animate-spin" />
+        ) : (
+          <ArrowRight aria-hidden className="size-3.5" />
+        )}
       </button>
     </form>
   );

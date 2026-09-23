@@ -326,7 +326,8 @@ export function QuoteWizard() {
 
   if (requestId) {
     return (
-      <QuoteSuccessCard
+      <div className="flex min-h-0 flex-1 items-center justify-center overflow-y-auto">
+        <QuoteSuccessCard
         title={t("success.title")}
         idLabel={t("success.id", { id: requestId })}
         description={t("success.description")}
@@ -336,9 +337,10 @@ export function QuoteWizard() {
         pdfLabel={t("success.pdf")}
         whatsappUrl={whatsappUrl}
         onRestart={restart}
-        onDownloadPdf={downloadPdf}
-        pdfBusy={pdfBusy}
-      />
+          onDownloadPdf={downloadPdf}
+          pdfBusy={pdfBusy}
+        />
+      </div>
     );
   }
 
@@ -359,7 +361,8 @@ export function QuoteWizard() {
   }[step];
 
   const renderFields = (target: Exclude<Step, "type" | "summary">) => (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    // Tres columnas en pantallas anchas: los pasos con muchos campos entran sin estirarse.
+    <div className="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2 xl:grid-cols-3">
       {stepFields(target).map((field) => {
         const computed = target === "details" && field.name === "area" && hasDimensions;
         const errorCode = errors[field.name];
@@ -382,8 +385,14 @@ export function QuoteWizard() {
   );
 
   return (
-    <div className="flex flex-col gap-6">
+    /*
+     * El progreso, el encabezado y los botones quedan siempre a la vista; lo único que
+     * scrollea es el contenido del paso, y solo si no entra. Para eso hace falta `min-h-0`
+     * en cada nivel: un hijo flex no se encoge por debajo de su contenido sin eso.
+     */
+    <div className="flex min-h-0 flex-1 flex-col gap-3">
       <QuoteStepBar
+        className="shrink-0"
         current={stepIndex + 1}
         total={STEPS.length}
         label={t("progress", {
@@ -393,7 +402,7 @@ export function QuoteWizard() {
         })}
       />
 
-      <div className="flex flex-col gap-1">
+      <div className="flex shrink-0 flex-col gap-1">
         <h2
           ref={headingRef}
           tabIndex={-1}
@@ -404,74 +413,81 @@ export function QuoteWizard() {
         <p className="text-sm text-gray-600">{description}</p>
       </div>
 
-      {step === "type" ? (
-        category === null ? (
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {QUOTE_CATEGORIES.map((item, index) => (
-              <QuoteCategoryCard
-                key={item}
-                index={index + 1}
-                icon={CATEGORY_ICONS[item]}
-                name={t(`categories.${item}.name`)}
-                short={t(`categories.${item}.short`)}
-                full={t(`categories.${item}.full`)}
-                ideal={t(`categories.${item}.ideal`)}
-                idealLabel={t("selector.ideal")}
-                detailLabel={expanded === item ? t("selector.hideDetail") : t("selector.detail")}
-                selected={false}
-                expanded={expanded === item}
-                onSelect={() => selectCategory(item)}
-                onToggleDetail={() => setExpanded((current) => (current === item ? null : item))}
+      {/* Sin recorte ni scroll propio: el contenido del paso se ve entero y, si necesita más
+          alto del que hay, la sección crece. `flex-1` solo reparte el espacio que sobra. */}
+      <div className="flex-1">
+        {/* En pantallas anchas el selector va a cinco columnas: las diez opciones quedan en dos
+            filas exactas y entran sin scroll en un portátil de 900px de alto. */}
+        {step === "type" ? (
+          category === null ? (
+            <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+              {QUOTE_CATEGORIES.map((item, index) => (
+                <QuoteCategoryCard
+                  key={item}
+                  index={index + 1}
+                  icon={CATEGORY_ICONS[item]}
+                  name={t(`categories.${item}.name`)}
+                  short={t(`categories.${item}.short`)}
+                  full={t(`categories.${item}.full`)}
+                  ideal={t(`categories.${item}.ideal`)}
+                  idealLabel={t("selector.ideal")}
+                  detailLabel={expanded === item ? t("selector.hideDetail") : t("selector.detail")}
+                  selected={false}
+                  expanded={expanded === item}
+                  onSelect={() => selectCategory(item)}
+                  onToggleDetail={() => setExpanded((current) => (current === item ? null : item))}
+                />
+              ))}
+            </ul>
+          ) : (
+            <QuoteConfirmCard
+              selectedLabel={t("confirm.selected", { category: t(`categories.${category}.name`) })}
+              description={t(`categories.${category}.full`)}
+              question={t("confirm.question")}
+              confirmLabel={t("confirm.yes")}
+              changeLabel={t("confirm.change")}
+              onConfirm={() => goTo("details")}
+              onChange={() => setDraft((current) => ({ ...current, category: null }))}
+            />
+          )
+        ) : null}
+
+        {step === "details" ? renderFields("details") : null}
+        {step === "context" ? renderFields("context") : null}
+
+        {step === "contact" ? (
+          <div className="flex flex-col gap-4">
+            {renderFields("contact")}
+            <p className="text-xs text-gray-500">{t("contact.privacy")}</p>
+          </div>
+        ) : null}
+
+        {/* El resumen va a dos columnas en pantallas anchas: entra de una sola vista. */}
+        {step === "summary" ? (
+          <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:items-start">
+            {summarySections.map((section) => (
+              <QuoteSummaryGroup
+                key={section.step}
+                title={section.title}
+                editLabel={t("summary.edit")}
+                lines={section.lines}
+                emptyLabel={t("summary.empty")}
+                onEdit={() => goTo(section.step)}
               />
             ))}
-          </ul>
-        ) : (
-          <QuoteConfirmCard
-            selectedLabel={t("confirm.selected", { category: t(`categories.${category}.name`) })}
-            description={t(`categories.${category}.full`)}
-            question={t("confirm.question")}
-            confirmLabel={t("confirm.yes")}
-            changeLabel={t("confirm.change")}
-            onConfirm={() => goTo("details")}
-            onChange={() => setDraft((current) => ({ ...current, category: null }))}
-          />
-        )
-      ) : null}
-
-      {step === "details" ? renderFields("details") : null}
-      {step === "context" ? renderFields("context") : null}
-
-      {step === "contact" ? (
-        <div className="flex flex-col gap-4">
-          {renderFields("contact")}
-          <p className="text-xs text-gray-500">{t("contact.privacy")}</p>
-        </div>
-      ) : null}
-
-      {step === "summary" ? (
-        <div className="flex flex-col gap-4">
-          {summarySections.map((section) => (
-            <QuoteSummaryGroup
-              key={section.step}
-              title={section.title}
-              editLabel={t("summary.edit")}
-              lines={section.lines}
-              emptyLabel={t("summary.empty")}
-              onEdit={() => goTo(section.step)}
-            />
-          ))}
-          <p className="text-xs text-gray-500">{t("summary.attachments")}</p>
-        </div>
-      ) : null}
+            <p className="text-xs text-gray-500 xl:col-span-2">{t("summary.attachments")}</p>
+          </div>
+        ) : null}
+      </div>
 
       {Object.keys(errors).length > 0 ? (
-        <p role="alert" className="text-sm font-semibold text-red-600">
+        <p role="alert" className="shrink-0 text-sm font-semibold text-red-600">
           {t("validation.summary")}
         </p>
       ) : null}
 
       {step !== "type" ? (
-        <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+        <div className="flex shrink-0 flex-col-reverse gap-3 sm:flex-row sm:justify-between">
           <button
             type="button"
             onClick={goBack}
